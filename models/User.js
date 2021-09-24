@@ -16,7 +16,15 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    display_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -35,6 +43,10 @@ User.init(
         len: [8],
       },
     },
+    account_status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    }
   },
   {
     hooks: {
