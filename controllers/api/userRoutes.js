@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const DailyLog = require('../../models/DailyLog');
+const UserSettings = require('../../models/UserSettings');
 
 router.post('/', async (req, res) => {
   try {
@@ -24,7 +25,6 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/daily-entry', async (req, res) => {
-  console.log("journal entry request received")
   try {
     const dbDailyData = await DailyLog.create({
       date: req.body.entryDate,
@@ -32,6 +32,20 @@ router.post('/daily-entry', async (req, res) => {
       user_id: req.session.user_id
     });
     res.status(200).json(dbDailyData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.post('/settings', async (req, res) => {
+  try {
+    const dbUserSettings = await UserSettings.create({
+      bio: req.body.bio, 
+      goals: req.body.goals,
+      user_id: req.session.user_id
+    });
+    res.status(200).json(dbUserSettings);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
