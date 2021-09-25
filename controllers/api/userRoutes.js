@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const DailyLog = require('../../models/DailyLog');
 
 router.post('/', async (req, res) => {
   try {
@@ -13,6 +14,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_In = true;
+      console.log(dbUserData);
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -20,6 +22,21 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.post('/daily-log', async (req, res) => {
+  console.log("journal entry request received")
+  try {
+    const dbDailyData = await DailyLog.create({
+      date: req.body.entryDate,
+      journal: req.body.journal, 
+      user_id: req.session.user_id
+    });
+    res.status(200).json(dbDailyData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 router.post('/login', async (req, res) => {
   try {

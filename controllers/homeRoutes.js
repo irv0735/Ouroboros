@@ -38,4 +38,12 @@ router.get('/account_creation', (req, res) => {
   }
 });
 
+router.get('/daily_log', withAuth, (req, res) => {
+  try {
+    res.render('daily_log', {logged_in: req.session.logged_in} );
+} catch (err) {
+  res.status(500).json(err);
+}
+});
+
 module.exports = router;
