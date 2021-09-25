@@ -45,7 +45,8 @@ User.init(
     },
     account_status: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 1
     }
   },
   {
