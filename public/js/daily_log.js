@@ -5,7 +5,7 @@ const dailyLogFormHandler = async (event) => {
   const journal = document.querySelector('#journal-log').value.trim();
 
   if (entryDate && journal) {
-    const response = await fetch('/api/users/daily-log', {
+    const response = await fetch('/api/users/daily-entry', {
       method: 'POST',
       body: JSON.stringify({ entryDate, journal }),
       headers: { 'Content-Type': 'application/json' },
@@ -19,4 +19,4 @@ const dailyLogFormHandler = async (event) => {
   }  
 };
 
-document.querySelector('.daily-log-form').addEventListener('submit', dailyLogFormHandler);git 
+document.querySelector('.daily-log-form').addEventListener('submit', dailyLogFormHandler);

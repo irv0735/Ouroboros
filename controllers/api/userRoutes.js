@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.logged_In = true;
+      req.session.logged_in = true;
       req.session.user_id = dbUserData.dataValues.id;
       res.status(200).json(dbUserData);
     });
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/daily-log', async (req, res) => {
+router.post('/daily-entry', async (req, res) => {
   console.log("journal entry request received")
   try {
     const dbDailyData = await DailyLog.create({
