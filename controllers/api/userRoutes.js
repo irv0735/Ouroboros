@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const DailyLog = require('../../models/DailyLog');
+const UserSettings = require('../../models/UserSettings');
 
 router.post('/', async (req, res) => {
   try {
@@ -12,7 +14,8 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.logged_In = true;
+      req.session.logged_in = true;
+      req.session.user_id = dbUserData.dataValues.id;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -20,6 +23,34 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.post('/daily-entry', async (req, res) => {
+  try {
+    const dbDailyData = await DailyLog.create({
+      date: req.body.entryDate,
+      journal: req.body.journal, 
+      user_id: req.session.user_id
+    });
+    res.status(200).json(dbDailyData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.post('/settings', async (req, res) => {
+  try {
+    const dbUserSettings = await UserSettings.create({
+      bio: req.body.bio, 
+      goals: req.body.goals,
+      user_id: req.session.user_id
+    });
+    res.status(200).json(dbUserSettings);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 router.post('/login', async (req, res) => {
   try {
