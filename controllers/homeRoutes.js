@@ -18,9 +18,13 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-      res.render('dashboard', {logged_in: req.session.logged_in} );
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] }
+    });
+    const userClean = userData.get({ plain: true });
+    res.render('dashboard', {...userClean, logged_in: req.session.logged_in} );
   } catch (err) {
     res.status(500).json(err);
   }
