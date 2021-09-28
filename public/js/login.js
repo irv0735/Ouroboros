@@ -1,3 +1,5 @@
+// Function executes when login is clicked -> initiates the API call to login and sends user to their 
+// dashboard on successful login.
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
