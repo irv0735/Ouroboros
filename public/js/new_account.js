@@ -1,3 +1,4 @@
+// function executes when the new account form is submitted -> api call to store the new user in the DB
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

@@ -3,6 +3,7 @@ const { User } = require('../../models');
 const DailyLog = require('../../models/DailyLog');
 const UserSettings = require('../../models/UserSettings');
 
+// Create a new user in the database
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -24,6 +25,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Create a new daily-log entry for the active user
 router.post('/daily-entry', async (req, res) => {
   try {
     const dbDailyData = await DailyLog.create({
@@ -38,6 +40,7 @@ router.post('/daily-entry', async (req, res) => {
   }
 })
 
+// Update the Account settings for the active user
 router.post('/settings', async (req, res) => {
   try {
     const dbUserSettings = await UserSettings.create({
@@ -52,6 +55,7 @@ router.post('/settings', async (req, res) => {
   }
 })
 
+// Login route to validate email/password and initiate the session
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -84,6 +88,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Logout route to destroy the session
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
