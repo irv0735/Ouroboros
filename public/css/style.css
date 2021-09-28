@@ -74,10 +74,11 @@ svg {
 
 @keyframes anim {
   100% {
-    stroke-dashoffset: 0px;
+    stroke-dashoffset: 236px;
   }
-  
 }
+
+
 a {
   color: var(--dark);
   text-decoration: none;
