@@ -1,6 +1,11 @@
 
   let number = document.getElementById("number")
   let counter = 0;
+
+  //pull data in from model?
+  if(exercise) {
+    const response = await fetch()
+  }
   setInterval(() => {
     //store users progress points
     //pull this number from db? replace the 65

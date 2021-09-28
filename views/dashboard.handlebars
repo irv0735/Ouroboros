@@ -1,8 +1,31 @@
 <h2>Welcome, {{first_name}}</h2>
 <p>account information will be sent to this page to be displayed</p>
+<h3>{{bio}}</h3>
 <a href="/daily_log">
 <button>Daily Log</button>
 </a>
+<div class="progress">
+  <div class="outer">
+    <div class="inner">
+      <div id="number">
+      </div>
+    </div>
+  </div>
+  <!-- this will be customized later! -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+         <defs>
+            <linearGradient id="GradientColor">
+               <stop offset="0%" stop-color="#c3446f" />
+               <stop offset="50%" stop-color="#95965e" />
+               <stop offset="100%" stop-color="#5e967b" />
+            </linearGradient>
+         </defs>
+         <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+ </svg>
+</div>
+
+
+<script src = "/js/progress-bar.js"></script>
 <a href="/account_details">
 <button>Account Settings</button>
 </a>
