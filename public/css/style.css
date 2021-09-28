@@ -17,8 +17,60 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--quatrinary);
+  
 }
 
+.progress {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.outer {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 1px solid lightsteelblue;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.19);           
+}
+
+.inner {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightsteelblue;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.19);  
+}
+#number{
+  font-weight: 60px;
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472px;
+  stroke-dashoffset: 472px;
+  animation: anim 2s linear forwards;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 165;
+  }
+  
+}
 a {
   color: var(--dark);
   text-decoration: none;
@@ -27,6 +79,8 @@ a {
 a:visited {
   color: inherit;
 }
+
+
 
 header {
   padding: 40px;
