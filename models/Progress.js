@@ -7,8 +7,7 @@ Progress.init(
   {
     exercise: {
       type: DataTypes.INTEGER,
-      date: DataTypes.DATE,
-      allowNull: false,
+      
     },
     meditation: {
       type: DataTypes.INTEGER,

@@ -2,11 +2,11 @@ const { Activity } = require('../models');
 
 const userData = [
   {
-    type: 'meditation',
-    name: 'Johnny Appleseed',
+    name: 'meditation',
+    description: 'quite time to think and shit',
     points: 10,
-    starting_date: 'June 22, 2021 09:00:00',
-    ending_date: null,
+    user_id: 1
+    
   },
   
 ];
