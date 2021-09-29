@@ -1,9 +1,16 @@
 <h2>Daily Log</h2>
+<p>test</p>
 <form class="form daily-log-form">
   <div class="form-group">
     <label for="date">Date:</label>
     <input class="form-input" type="date" id="date-log" />
   </div>
+   {{#each activities as |activity|}}
+  <div class="form-group">
+    <label for="{{activity.name}}">{{activity.name}}</label>
+    <input class="form-input activity-input" type="checkbox" id="{{activity.name}}"/>
+  </div>
+    {{/each}}
   <div class="form-group">
     <label for="journal-entry">Journal Entry:</label>
     <input class="form-input" type="text" id="journal-log" />

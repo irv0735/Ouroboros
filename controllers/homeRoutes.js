@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 // Renders the homepage
 router.get('/', async (req, res) => {
   try {
-  res.render('homepage', {logged_in: req.session.logged_in});
+    res.render('homepage', { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -24,10 +24,10 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] }
+      attributes: { exclude: ['password'] },
     });
     const userClean = userData.get({ plain: true });
-    res.render('dashboard', {...userClean, logged_in: req.session.logged_in} );
+    res.render('dashboard', { ...userClean, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -49,28 +49,29 @@ router.get('/account_creation', (req, res) => {
 // Renders the account-settings form page for the session user
 router.get('/account_details', withAuth, (req, res) => {
   try {
-    res.render('account_details', {logged_in: req.session.logged_in} );
-} catch (err) {
-  res.status(500).json(err);
-}
+    res.render('account_details', { logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // Renders the Daily Log form for the session user
 router.get('/daily_log', withAuth, async (req, res) => {
   try {
     const activityData = await Activity.findAll({
-      attributes: ['name']
+      attributes: ['name'],
     });
-    const cleanActivity = activityData.map((activity) => activity.get({ plain: true }));
-    console.log(cleanActivity);
+    const activities = activityData.map((activity) =>
+      activity.get({ plain: true })
+    );
     res.render('daily_log', {
-      ...cleanActivity,
+      activities,
       logged_in: true,
     });
-} catch (err) {
-  console.log(err);
-  res.status(500).json(err);
-}
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
