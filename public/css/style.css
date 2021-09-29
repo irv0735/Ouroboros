@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'gallery_modernregular';
+  src: url('gallerymodern-webfont.woff2') format('woff2'),
+       url('gallerymodern-webfont.woff') format('woff'),
+       url('gallerymodern-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 /* changed up some of the colors */
 :root {
   --primary: #5b49a8;
@@ -13,7 +23,7 @@
 /* added font family
 changed background */
 body {
-  font-family: 'Courgette', cursive;
+  font-family: 'gallery_modernregular';
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -21,8 +31,8 @@ body {
   justify-content: flex-start;
 
   /* background-color: var(--quatrinary); */
-  color: white;
-  background: url('/images/background-image.jpeg') no-repeat center center fixed;
+  color: var(--dark);
+  background: url('/images/bpbg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -34,6 +44,11 @@ body {
   ); */
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 a {
   color: var(--dark);
   text-decoration: none;
@@ -54,6 +69,10 @@ header {
 }
 
 h1 {
+  font-family: 'gallery_modernregular';
+  font-weight: normal;
+  font-style: normal;
+
   font-size: 6vw;
   color: var(--dark);
   text-shadow: -5px 5px 16px #4bc0e4;
@@ -125,26 +144,18 @@ img {
   height: auto;
 }
 
-.painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
-
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-}
 
 .content {
   text-align: center;
   margin-top: 3vh;
   padding: 3vw;
   border-radius: 50px;
-  background: linear-gradient(225deg, #4bc0e4, #59e4ff);
-  box-shadow: inset 18px -18px 36px #245c6d, inset -18px 18px 36px #82ffff;
+  border-radius: 50px;
+  border-radius: 44px;
+  border-radius: 44px;
+  background: linear-gradient(145deg, #cedde6, #f5ffff);
+  box-shadow:  28px 28px 56px #ccdae3,
+               -28px -28px 56px #feffff;
 }
 
 /* CARDS */
