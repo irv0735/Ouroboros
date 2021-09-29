@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ouroboros</title>
+  {{!-- added font family --}}
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script src= "js/api/api.js"></script>
@@ -12,6 +14,9 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
+        <div class="logo">
+      <img class="logo-image" src="https://loremflickr.com/640/360" alt="placeholder image for our logo">
+    </div>
     <h1>
       Ouroboros
     </h1>
@@ -28,7 +33,10 @@
   </nav>
 
   <main class="container container-fluid mt-5">
-    {{{ body }}}
+    <div class='content'>
+         {{{ body }}}
+    </div>
+ 
   </main>
   
   <footer>
