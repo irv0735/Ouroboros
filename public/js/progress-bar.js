@@ -1,8 +1,8 @@
   
-  let number = document.getElementById("number")
+  let number = document.getElementById("number");
   let counter = 0;
  // let points = Progress.exercise;
-  let percentage = document.querySelector('.progress').dataset.percent
+  let percentage = document.querySelector('.progress').dataset.percent;
   console.log(percentage);
 
   setInterval(() => {
@@ -16,4 +16,4 @@
     number.innerHTML = counter + "%";
     }
  
-  }, 20)
+  }, 20);

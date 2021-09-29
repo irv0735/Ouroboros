@@ -33,8 +33,8 @@
     fill: none;
     stroke: url(#GradientColor);
     stroke-width: 20px;
-    stroke-dasharray: 472px;
-    stroke-dashoffset: 472px;
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
   }
 
   .anim-10 {
@@ -73,59 +73,63 @@
     left: 0;
   
   }
-
+  @keyframes anim-0 {
+    100% {
+      stroke-dashoffset: 500px;
+    }
+  }
 
   @keyframes anim-10 {
     100% {
-      stroke-dashoffset: 236px;
+      stroke-dashoffset: 450px;
     }
   }
   @keyframes anim-20 {
     100% {
-      stroke-dashoffset: 236px;
+      stroke-dashoffset: 400px;
     }
   }
 
   @keyframes anim-30 {
     100% {
-      stroke-dashoffset: 236px;
+      stroke-dashoffset: 350px;
     }
   }
   @keyframes anim-40 {
     100% {
-      stroke-dashoffset: 236px;
+      stroke-dashoffset: 300px;
     }
   }
   @keyframes anim-50 {
     100% {
-      stroke-dashoffset: 236px;
+      stroke-dashoffset: 250px;
     }
   }
   @keyframes anim-60 {
     100% {
-      stroke-dashoffset: 354px;
+      stroke-dashoffset: 200px;
     }
   }
 
   @keyframes anim-70 {
     100% {
-      stroke-dashoffset: 354px;
+      stroke-dashoffset: 150px;
     }
   }
   @keyframes anim-80 {
     100% {
-      stroke-dashoffset: 354px;
+      stroke-dashoffset: 100px;
     }
   }
   @keyframes anim-90 {
     100% {
-      stroke-dashoffset: 354px;
+      stroke-dashoffset: 50px;
     }
   }
 
   @keyframes anim-100 {
     100% {
-      stroke-dashoffset: 354px;
+      stroke-dashoffset: 0px;
     }
   }
   
