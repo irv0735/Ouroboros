@@ -1,5 +1,5 @@
 {
-  "name": "Lucid-Harmonization",
+  "name": "Ouroboros",
   "version": "1.0.0",
   "description": "Wellness application - track progress and get tips/reminders",
   "main": "server.js",
@@ -27,9 +27,7 @@
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.0",
-    "sequelize": "^6.6.5"
-  },
-  "devDependencies": {
+    "sequelize": "^6.6.5",
     "dotenv": "^10.0.0"
   }
 }
