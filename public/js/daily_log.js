@@ -1,4 +1,6 @@
 // function executes when the daily-entry form is submitted -> api call to save the record in the database
+const activityArray = document.querySelectorAll('.activity-input');
+
 const dailyLogFormHandler = async (event) => {
   event.preventDefault();
 

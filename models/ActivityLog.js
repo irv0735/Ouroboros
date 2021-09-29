@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class DailyLog extends Model {}
+class ActivityLog extends Model {}
 
-DailyLog.init(
+ActivityLog.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,15 +16,20 @@ DailyLog.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    journal: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
+        key: 'id',
+        unique: false
+      }
+    },
+    activity_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'activity',
         key: 'id',
         unique: false
       }
@@ -35,8 +40,8 @@ DailyLog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dailyLog',
+    modelName: 'activityLog',
   }
 );
 
-module.exports = DailyLog;
+module.exports = ActivityLog;
