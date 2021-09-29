@@ -1,22 +1,36 @@
+/* changed up some of the colors */
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
+  --primary: #5b49a8;
+  --secondary: #329476;
   --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
+  --quatrinary: #0093ce;
   --light: #e3e4e3;
-  --dark: #182c23;
+  --dark: #181757;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
 
+/* added font family
+changed background */
 body {
-  font-family: Arial;
+  font-family: 'Courgette', cursive;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--quatrinary);
+  /* background-color: var(--quatrinary); */
+  color: white;
+  background: url('/images/background-image.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-image: linear-gradient(
+    to left bottom,
+    rgb(0, 8, 121),
+    rgb(21, 247, 255)
+  ); */
 }
 
 a {
@@ -30,9 +44,16 @@ a:visited {
 
 header {
   padding: 40px;
-  text-align: center;
-  background: var(--primary);
+  height: 200px;
+  /* text-align: center; */
+  /* background: var(--primary); */
   color: var(--light);
+}
+
+h1 {
+  font-size: 6vw;
+  color: var(--dark);
+  text-shadow: -5px 5px 16px #4bc0e4;
 }
 
 main {
@@ -51,7 +72,9 @@ aside {
 
 nav {
   display: flex;
-  background-color: var(--secondary);
+  justify-content: flex-end;
+  color: white;
+  /* background-color: var(--secondary); */
 }
 
 nav a {
@@ -64,6 +87,13 @@ nav a {
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
+}
+
+.logo-image {
+  border-radius: 50%;
+  height: 150px;
+  width: 250px;
+  /* box-shadow: -18px 18px 36px #180b40, 18px -18px 36px #5629e8; */
 }
 
 .gallery {
@@ -103,6 +133,15 @@ img {
   text-align: center;
   padding: 10px 20px;
   font-weight: bold;
+}
+
+.content {
+  text-align: center;
+  margin-top: 3vh;
+  padding: 3vw;
+  border-radius: 50px;
+  background: linear-gradient(225deg, #4bc0e4, #59e4ff);
+  box-shadow: inset 18px -18px 36px #245c6d, inset -18px 18px 36px #82ffff;
 }
 
 /* CARDS */
@@ -159,6 +198,6 @@ img {
 .container {
   display: flex;
   flex-flow: column wrap;
-  align-content: flex-start;
+  /* align-content: flex-start; */
   align-items: center;
 }
