@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Activity } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders the homepage
@@ -56,10 +56,19 @@ router.get('/account_details', withAuth, (req, res) => {
 });
 
 // Renders the Daily Log form for the session user
-router.get('/daily_log', withAuth, (req, res) => {
+router.get('/daily_log', withAuth, async (req, res) => {
   try {
-    res.render('daily_log', {logged_in: req.session.logged_in} );
+    const activityData = await Activity.findAll({
+      attributes: ['name']
+    });
+    const cleanActivity = activityData.map((activity) => activity.get({ plain: true }));
+    console.log(cleanActivity);
+    res.render('daily_log', {
+      ...cleanActivity,
+      logged_in: true,
+    });
 } catch (err) {
+  console.log(err);
   res.status(500).json(err);
 }
 });
