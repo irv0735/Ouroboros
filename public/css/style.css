@@ -22,7 +22,7 @@ body {
 
   /* background-color: var(--quatrinary); */
   color: white;
-  background: url('/images/background-image.jpeg') no-repeat center center fixed;
+  background: url('/images/bpbg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -125,18 +125,6 @@ img {
   height: auto;
 }
 
-.painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
-
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-}
 
 .content {
   text-align: center;
