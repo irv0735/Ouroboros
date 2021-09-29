@@ -73,56 +73,56 @@
     left: 0;
   
   }
-  @keyframes anim-10 {
-    0% {
-      stroke-dashoffset: 400;
+  @keyframes anim-0 {
+    100% {
+      stroke-dashoffset: 500px;
     }
   }
 
   @keyframes anim-10 {
-    10% {
-      stroke-dashoffset: 450;
+    100% {
+      stroke-dashoffset: 450px;
     }
   }
   @keyframes anim-20 {
-    20% {
+    100% {
       stroke-dashoffset: 400px;
     }
   }
 
   @keyframes anim-30 {
-    30% {
+    100% {
       stroke-dashoffset: 350px;
     }
   }
   @keyframes anim-40 {
-    40% {
+    100% {
       stroke-dashoffset: 300px;
     }
   }
   @keyframes anim-50 {
-    50% {
+    100% {
       stroke-dashoffset: 250px;
     }
   }
   @keyframes anim-60 {
-    60% {
+    100% {
       stroke-dashoffset: 200px;
     }
   }
 
   @keyframes anim-70 {
-    70% {
+    100% {
       stroke-dashoffset: 150px;
     }
   }
   @keyframes anim-80 {
-    80% {
+    100% {
       stroke-dashoffset: 100px;
     }
   }
   @keyframes anim-90 {
-    90% {
+    100% {
       stroke-dashoffset: 50px;
     }
   }
