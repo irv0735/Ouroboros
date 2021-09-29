@@ -29,4 +29,12 @@ User.belongsToMany(Activity, {
   as: 'user_activities'
 });
 
+ActivityLog.belongsTo(Activity, {
+  foreignKey: 'activity_id'
+});
+
+ActivityLog.belongsTo(User, {
+  foreignKey: 'user_id'
+})
+
 module.exports = { User, UserSettings, Activity, ActivityLog, DailyLog };

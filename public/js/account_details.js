@@ -16,8 +16,9 @@ const settingsFormHandler = async (event) => {
     } else {
       alert('Failed to create account.');
     }
-  }
+  } else {
   alert("You must enter botha bio and goal to continue!");
+  }
 };
 
 document.querySelector('.settings-form').addEventListener('submit', settingsFormHandler);
