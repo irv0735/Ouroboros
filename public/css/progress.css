@@ -1,0 +1,129 @@
+
+.outer {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 1px solid lightsteelblue;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.19);           
+  }
+  
+  .inner {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightsteelblue;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.19);  
+  }
+  #number{
+    font-weight: 60px;
+  }
+  
+  circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472px;
+    stroke-dashoffset: 472px;
+  }
+
+  .anim-10 {
+    animation: anim-10 2s linear forwards;
+  }
+  .anim-20 {
+    animation: anim-20 2s linear forwards;
+  }
+  .anim-30 {
+    animation: anim-30 2s linear forwards;
+  }
+  .anim-40 {
+    animation: anim-40 2s linear forwards;
+  }
+  .anim-50 {
+    animation: anim-50 2s linear forwards;
+  }
+ .anim-60 {
+    animation: anim-60 2s linear forwards;
+  }
+  .anim-70 {
+    animation: anim-70 2s linear forwards;
+  }
+  .anim-80 {
+    animation: anim-80 2s linear forwards;
+  }
+  .anim-90 {
+    animation: anim-90 2s linear forwards;
+  }
+  .anim-100 {
+    animation: anim-100 2s linear forwards;
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+  }
+
+
+  @keyframes anim-10 {
+    100% {
+      stroke-dashoffset: 236px;
+    }
+  }
+  @keyframes anim-20 {
+    100% {
+      stroke-dashoffset: 236px;
+    }
+  }
+
+  @keyframes anim-30 {
+    100% {
+      stroke-dashoffset: 236px;
+    }
+  }
+  @keyframes anim-40 {
+    100% {
+      stroke-dashoffset: 236px;
+    }
+  }
+  @keyframes anim-50 {
+    100% {
+      stroke-dashoffset: 236px;
+    }
+  }
+  @keyframes anim-60 {
+    100% {
+      stroke-dashoffset: 354px;
+    }
+  }
+
+  @keyframes anim-70 {
+    100% {
+      stroke-dashoffset: 354px;
+    }
+  }
+  @keyframes anim-80 {
+    100% {
+      stroke-dashoffset: 354px;
+    }
+  }
+  @keyframes anim-90 {
+    100% {
+      stroke-dashoffset: 354px;
+    }
+  }
+
+  @keyframes anim-100 {
+    100% {
+      stroke-dashoffset: 354px;
+    }
+  }
+  
+  
+  
+  
+  
+  
