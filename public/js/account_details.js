@@ -1,3 +1,4 @@
+// function executes when the account-settings form is submitted -> api call to store the settings in the DB
 const settingsFormHandler = async (event) => {
   event.preventDefault();
 

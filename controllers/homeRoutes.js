@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Renders the homepage
 router.get('/', async (req, res) => {
   try {
   res.render('homepage', {logged_in: req.session.logged_in});
@@ -10,6 +11,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Renders the Login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');
@@ -18,6 +20,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Renders the Dashboard for the current session user
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -30,6 +33,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// Renders the new-account form page
 router.get('/account_creation', (req, res) => {
   if (!req.session.logged_in) {
     try {
@@ -42,6 +46,7 @@ router.get('/account_creation', (req, res) => {
   }
 });
 
+// Renders the account-settings form page for the session user
 router.get('/account_details', withAuth, (req, res) => {
   try {
     res.render('account_details', {logged_in: req.session.logged_in} );
@@ -50,6 +55,7 @@ router.get('/account_details', withAuth, (req, res) => {
 }
 });
 
+// Renders the Daily Log form for the session user
 router.get('/daily_log', withAuth, (req, res) => {
   try {
     res.render('daily_log', {logged_in: req.session.logged_in} );
