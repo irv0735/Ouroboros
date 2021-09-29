@@ -1,23 +1,15 @@
-//fetch to get data 
-//create a js file with all fetch requests 
-//public js file with multiple api calls 
-//create object with a function on it METHOD 
-//w that 
-
-
+  
   let number = document.getElementById("number")
   let counter = 0;
-  let points = Progress.exercise;
+ // let points = Progress.exercise;
+  let percentage = document.querySelector('.progress').dataset.percent
+  console.log(percentage);
 
-  //pull data in from model?
-  // if(exercise) {
-  //   const response = await fetch()
-  // }
   setInterval(() => {
     //store users progress points
     //pull this number from db? replace the 65
     //edit css animation
-    if(counter == 65){
+    if(counter == percentage){
       clearInterval();
     } else {
          counter += 1;

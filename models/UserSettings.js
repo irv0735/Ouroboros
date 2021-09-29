@@ -34,7 +34,7 @@ UserSettings.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user-settings',
+    modelName: 'settings',
   }
 );
 

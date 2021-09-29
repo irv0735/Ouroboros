@@ -62,7 +62,12 @@ circle {
   stroke-width: 20px;
   stroke-dasharray: 472px;
   stroke-dashoffset: 472px;
-  animation: anim 2s linear forwards;
+}
+.anim-50 {
+  animation: anim-50 2s linear forwards;
+}
+.anim-75 {
+  animation: anim-75 2s linear forwards;
 }
 
 svg {
@@ -72,12 +77,18 @@ svg {
 
 }
 
-@keyframes anim {
+@keyframes anim-50 {
   100% {
-    stroke-dashoffset: 0px;
+    stroke-dashoffset: 236px;
   }
-  
 }
+@keyframes anim-75 {
+  100% {
+    stroke-dashoffset: 354px;
+  }
+}
+
+
 a {
   color: var(--dark);
   text-decoration: none;
