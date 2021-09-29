@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, ActivityLog } = require('../../models');
 const DailyLog = require('../../models/DailyLog');
 const UserSettings = require('../../models/UserSettings');
 
@@ -36,6 +36,24 @@ router.post('/daily-entry', async (req, res) => {
     res.status(200).json(dbDailyData);
   } catch (err) {
     console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+// Create a new activity-log entry for the active user
+router.post('/activity-log', async (req, res) => {
+  const newActivities = [];
+  req.body.activityArray.forEach(element => {
+    newActivities.push({
+      user_id: req.session.user_id,
+      date: req.body.entryDate,
+      activity_id: element 
+    });
+  });
+  try { 
+    const activityLogData = await ActivityLog.bulkCreate(newActivities);
+    res.status(200).json(activityLogData);
+  } catch (err) {
     res.status(500).json(err);
   }
 })

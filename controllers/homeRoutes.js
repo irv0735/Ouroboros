@@ -59,7 +59,7 @@ router.get('/account_details', withAuth, (req, res) => {
 router.get('/daily_log', withAuth, async (req, res) => {
   try {
     const activityData = await Activity.findAll({
-      attributes: ['name'],
+      attributes: ['id', 'name'],
     });
     const activities = activityData.map((activity) =>
       activity.get({ plain: true })
