@@ -9,11 +9,11 @@
     //store users progress points
     //pull this number from db? replace the 65
     //edit css animation
-    if(counter == percentage){
-      clearInterval();
-    } else {
-         counter += 1;
-    number.innerHTML = counter + "%";
-    }
+    // if(counter < percentage){
+    //   clearInterval();
+    // } else {
+    //      counter += 1;
+    number.innerHTML = percentage + "%";
+    // }
  
-  }, 20)
+  }, 20);
