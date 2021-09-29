@@ -22,11 +22,17 @@ Activity.init(
     points: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 10
     },
     badge_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    badge_requires: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 100
+    } 
   },
   {
     sequelize,

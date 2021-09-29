@@ -1,9 +1,15 @@
 <h2>Welcome, {{first_name}}</h2>
-<p>account information will be sent to this page to be displayed</p>
-<h3>{{bio}}</h3>
+<h3>{{setting.bio}}</h3>
 <a href="/daily_log">
 <button>Daily Log</button>
 </a>
+<!--Temp Div for variables-->
+<div>
+  {{#each user_activities as |activity|}}
+  <p>{{activity.name}}: - {{activity.userPercent}} percent</p>
+  {{/each}} 
+</div>
+
 
 <div class="progress" data-percent="80">
   <div class="skill">

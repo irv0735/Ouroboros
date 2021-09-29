@@ -1,7 +1,6 @@
 // function executes when the account-settings form is submitted -> api call to store the settings in the DB
 const settingsFormHandler = async (event) => {
   event.preventDefault();
-
   const bio = document.querySelector('#bio-settings').value.trim();
   const goals = document.querySelector('#goals-settings').value.trim();
 
@@ -18,6 +17,7 @@ const settingsFormHandler = async (event) => {
       alert('Failed to create account.');
     }
   }
+  alert("You must enter botha bio and goal to continue!");
 };
 
 document.querySelector('.settings-form').addEventListener('submit', settingsFormHandler);

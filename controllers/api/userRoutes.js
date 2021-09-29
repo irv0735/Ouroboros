@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const { User, ActivityLog } = require('../../models');
-const DailyLog = require('../../models/DailyLog');
-const UserSettings = require('../../models/UserSettings');
+const { User, ActivityLog, DailyLog, UserSettings } = require('../../models');
 
 // Create a new user in the database
 router.post('/', async (req, res) => {
@@ -58,7 +56,22 @@ router.post('/activity-log', async (req, res) => {
   }
 })
 
-// Update the Account settings for the active user
+// Return the total count for the selected activity for the current user
+router.get('/activity-count/:id', async (req, res) => {
+  try {
+    const activityCount = await ActivityLog.count({ 
+      where: { 
+        activity_id: req.params.id, 
+        user_id: req.session.user_id 
+        }
+    });
+    res.status(200).json(activityCount)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+// Create the account settings for the active user
 router.post('/settings', async (req, res) => {
   try {
     const dbUserSettings = await UserSettings.create({

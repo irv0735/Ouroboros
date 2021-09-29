@@ -21,4 +21,12 @@ Activity.hasMany(ActivityLog, {
   foreighKey: 'activity_id'
 });
 
+User.belongsToMany(Activity, {
+  through: {
+    model: ActivityLog,
+    unique: false
+  },
+  as: 'user_activities'
+});
+
 module.exports = { User, UserSettings, Activity, ActivityLog, DailyLog };
