@@ -7,7 +7,7 @@
   font-style: normal;
 
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 /* changed up some of the colors */
 :root {
   --primary: #5b49a8;
@@ -23,7 +23,7 @@
 /* added font family
 changed background */
 body {
-  font-family: 'Courgette', cursive;
+  font-family: 'gallery_modernregular';
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ body {
   justify-content: flex-start;
 
   /* background-color: var(--quatrinary); */
-  color: white;
+  color: var(--dark);
   background: url('/images/bpbg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -44,6 +44,11 @@ body {
   ); */
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 a {
   color: var(--dark);
   text-decoration: none;
