@@ -1,11 +1,11 @@
 const sequelize = require('../config/connection');
-const seedGallery = require('./activityData');
+const seedActivity = require('./activityData');
 
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUser();
+  await seedActivity();
 
 
   process.exit(0);

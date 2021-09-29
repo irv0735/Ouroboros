@@ -11,7 +11,6 @@ Activity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -24,14 +23,9 @@ Activity.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
+    badge_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'user',
-        key: 'id',
-        unique: false
-      }
     }
   },
   {
