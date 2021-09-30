@@ -92,7 +92,7 @@ aside {
 nav {
   display: flex;
   justify-content: flex-end;
-  color: white;
+  color: rgb(0, 0, 0);
   /* background-color: var(--secondary); */
 }
 
