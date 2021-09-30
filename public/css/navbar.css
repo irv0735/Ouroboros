@@ -68,9 +68,11 @@ label ul {
   opacity: 0;
   transition: 0.25s 0s ease-in-out;
 }
-label a {
+label a,
+#logout {
   margin-bottom: 1em;
   display: block;
-  color: #000;
+  color: #181757;
   text-decoration: none;
+  font-size: 3em;
 }
