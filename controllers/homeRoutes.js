@@ -27,23 +27,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Activity, through: ActivityLog, as: 'user_activities', 
-                  attributes: ['id', 'name', 'points', 'badge_requires' ]},
-                { model: UserSettings, attributes: ['bio'] }
-              ]
+                  attributes: ['id', 'name', 'points', 'badge_requires', 'badge_name' ]},
+                { model: UserSettings, attributes: ['bio'] }]
     })
     const userClean = userData.get({ plain: true });
-    userClean.user_activities.forEach( async (element) => {
-      const activityCount = await ActivityLog.count({ 
-        where: { 
-          activity_id: element.id, 
-          user_id: req.session.user_id 
-          }
+    const getPercentage = new Promise((resolve, reject) => {
+      userClean.user_activities.forEach( async (element) => {
+        const activityCount = await ActivityLog.count({ 
+          where: { 
+            activity_id: element.id, 
+            user_id: req.session.user_id 
+            }
+        });
+        const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
+        element.userPercent = userPercentage;
+        resolve();
       });
-      const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
-      element.userPercent = userPercentage;
-    });
-    console.log(userClean);
-    res.render('dashboard', { ...userClean, logged_in: true }); 
+    }).then(() => {
+    res.render('dashboard', { ...userClean, logged_in: true })});
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -64,10 +66,20 @@ router.get('/account-creation', (req, res) => {
 });
 
 // Renders the account-settings form page for the session user
-router.get('/account-settings', withAuth, (req, res) => {
+router.get('/account-settings', withAuth, async (req, res) => {
   try {
-    res.render('account_settings', { logged_in: true });
+    const userSettings = await UserSettings.findOne({
+      where: {user_id: req.session.user_id}, 
+      attributes: ['bio', 'goals'] } );
+    if (userSettings) {
+      const cleanSettings = userSettings.get({ plain: true });
+      res.render('account_settings', {...cleanSettings, logged_in: true })
+    }
+    else {
+      res.render('account_settings', {logged_in: true})
+    }
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
