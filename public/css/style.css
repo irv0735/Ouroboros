@@ -1,11 +1,10 @@
 @font-face {
   font-family: 'gallery_modernregular';
   src: url('gallerymodern-webfont.woff2') format('woff2'),
-       url('gallerymodern-webfont.woff') format('woff'),
-       url('gallerymodern-webfont.ttf') format('truetype');
+    url('gallerymodern-webfont.woff') format('woff'),
+    url('gallerymodern-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 /* changed up some of the colors */
@@ -57,8 +56,6 @@ a {
 a:visited {
   color: inherit;
 }
-
-
 
 header {
   padding: 40px;
@@ -144,7 +141,6 @@ img {
   height: auto;
 }
 
-
 .content {
   text-align: center;
   margin-top: 3vh;
@@ -154,8 +150,7 @@ img {
   border-radius: 44px;
   border-radius: 44px;
   background: linear-gradient(145deg, #cedde6, #f5ffff);
-  box-shadow:  28px 28px 56px #ccdae3,
-               -28px -28px 56px #feffff;
+  box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
 }
 
 /* CARDS */
@@ -214,4 +209,18 @@ img {
   flex-flow: column wrap;
   /* align-content: flex-start; */
   align-items: center;
+}
+
+/* CAROUSEL */
+.carousel {
+  background: #eee;
+  margin-bottom: 4vh;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
 }
