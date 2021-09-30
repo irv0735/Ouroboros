@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" type="text/css" href="/css/progress.css">
+  <link rel="stylesheet" type="text/css" href="/css/navbar.css">
   <script src= "js/api/api.js"></script>
 </head>
 
@@ -31,16 +32,22 @@
 
   </header>
 
-  <nav>
-    <a href="/">Home</a>
-    {{#if logged_in}}
-    <a href="/dashboard">Dashboard</a>
-    <a href="/account-settings">Account Settings</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
+    <label>
+    <input type='checkbox'>
+    <span class='menu'>
+      <span class='hamburger'></span>
+    </span>
+    <ul>
+      <li><a href="/">Home</a></li>
+      {{#if logged_in}}
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li> <a href="/account-settings">Account Settings</a></li>
+      <li><button id="logout" class="btn-no-style">Logout</button></li>
+      {{else}}
+      <li><a href="/login">Login</a></li>
+      {{/if}}
+    </ul>
+  </label>
 
   <main class="container container-fluid mt-5">
     <div class='content'>
