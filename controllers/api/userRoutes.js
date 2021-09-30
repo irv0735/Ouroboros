@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, ActivityLog, DailyLog, UserSettings } = require('../../models');
+const { User, UserSettings } = require('../../models');
 
 // Create a new user in the database
 router.post('/', async (req, res) => {
@@ -22,54 +22,6 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// Create a new daily-log entry for the active user
-router.post('/daily-entry', async (req, res) => {
-  try {
-    const dbDailyData = await DailyLog.create({
-      date: req.body.entryDate,
-      journal: req.body.journal, 
-      user_id: req.session.user_id
-    });
-    res.status(200).json(dbDailyData);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-})
-
-// Create a new activity-log entry for the active user
-router.post('/activity-log', async (req, res) => {
-  const newActivities = [];
-  req.body.activityArray.forEach(element => {
-    newActivities.push({
-      user_id: req.session.user_id,
-      date: req.body.entryDate,
-      activity_id: element 
-    });
-  });
-  try { 
-    const activityLogData = await ActivityLog.bulkCreate(newActivities);
-    res.status(200).json(activityLogData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-// Return the total count for the selected activity for the current user
-router.get('/activity-count/:id', async (req, res) => {
-  try {
-    const activityCount = await ActivityLog.count({ 
-      where: { 
-        activity_id: req.params.id, 
-        user_id: req.session.user_id 
-        }
-    });
-    res.status(200).json(activityCount)
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
 
 // Create the account settings for the active user
 router.post('/settings', async (req, res) => {

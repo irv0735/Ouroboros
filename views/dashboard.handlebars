@@ -1,6 +1,6 @@
 <h2>Welcome, {{first_name}}</h2>
 <h3>{{setting.bio}}</h3>
-<a href="/daily_log">
+<a href="/daily-log-entry">
 <button>Daily Log</button>
 </a>
 <!--Temp variable capture
@@ -34,8 +34,12 @@
   </div>
   {{/each}}
 </div>
- 
+
+{{/each}} 
+
 <script src = "/js/progress-bar.js"></script>
-<a href="/account_details">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<a href="/account-settings">
+
 <button>Account Settings</button>
 </a>

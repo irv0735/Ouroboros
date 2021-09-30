@@ -51,7 +51,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 // Renders the new-account form page
-router.get('/account_creation', (req, res) => {
+router.get('/account-creation', (req, res) => {
   if (!req.session.logged_in) {
     try {
       res.render('create_account');
@@ -64,16 +64,16 @@ router.get('/account_creation', (req, res) => {
 });
 
 // Renders the account-settings form page for the session user
-router.get('/account_details', withAuth, (req, res) => {
+router.get('/account-settings', withAuth, (req, res) => {
   try {
-    res.render('account_details', { logged_in: true });
+    res.render('account_settings', { logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 // Renders the Daily Log form for the session user
-router.get('/daily_log', withAuth, async (req, res) => {
+router.get('/daily-log-entry', withAuth, async (req, res) => {
   try {
     const activityData = await Activity.findAll({
       attributes: ['id', 'name'],
@@ -81,7 +81,7 @@ router.get('/daily_log', withAuth, async (req, res) => {
     const activities = activityData.map((activity) =>
       activity.get({ plain: true })
     );
-    res.render('daily_log', {
+    res.render('daily_log_entry', {
       activities,
       logged_in: true,
     });

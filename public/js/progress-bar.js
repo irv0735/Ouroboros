@@ -1,9 +1,8 @@
   
   let number = document.getElementById("number");
   let counter = 0;
- // let points = Progress.exercise;
+
   let percentage = document.querySelector('.progress').dataset.percent;
-  console.log(percentage);
 
   setInterval(() => {
     //store users progress points

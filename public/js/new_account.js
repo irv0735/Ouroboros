@@ -16,7 +16,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/account_details');
+      document.location.replace('/account-settings');
     } else {
       alert('Failed to create account.');
     }
