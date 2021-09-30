@@ -44,7 +44,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
         resolve();
       });
     }).then(() => {
-    console.log(userClean);
     res.render('dashboard', { ...userClean, logged_in: true })});
 
   } catch (err) {
