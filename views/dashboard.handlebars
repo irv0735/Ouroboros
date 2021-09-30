@@ -1,11 +1,15 @@
 <h2>Welcome, {{first_name}}</h2>
-<p>account information will be sent to this page to be displayed</p>
-<h3>{{bio}}</h3>
+<h3>{{setting.bio}}</h3>
 <a href="/daily_log">
 <button>Daily Log</button>
 </a>
+<!--Temp variable capture
+{{activity.name}}: - {{activity.userPercent}} %
+-->
 
-<div class="progress" data-percent="80">
+{{#each user_activities as |activity|}}
+{{activity.name}}
+<div class="progress" data-percent="{{activity.userPercent}}">
   <div class="skill">
   <div class="outer">
     <div class="inner">
@@ -22,11 +26,16 @@
                <stop offset="100%" stop-color="#5e967b" />
             </linearGradient>
          </defs>
-         <circle class="anim-80" cx="80" cy="80" r="70" stroke-linecap="round" />
+         <circle class="anim-{{activity.userPercent}}" cx="80" cy="80" r="70" stroke-linecap="round" />
  </svg> 
  </div>
 
 </div>
+{{/each}} 
+
+
+
+
 
 
 <script src = "/js/progress-bar.js"></script>

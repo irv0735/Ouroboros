@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
-const DailyLog = require('../../models/DailyLog');
-const UserSettings = require('../../models/UserSettings');
+const { User, ActivityLog, DailyLog, UserSettings } = require('../../models');
 
 // Create a new user in the database
 router.post('/', async (req, res) => {
@@ -40,7 +38,40 @@ router.post('/daily-entry', async (req, res) => {
   }
 })
 
-// Update the Account settings for the active user
+// Create a new activity-log entry for the active user
+router.post('/activity-log', async (req, res) => {
+  const newActivities = [];
+  req.body.activityArray.forEach(element => {
+    newActivities.push({
+      user_id: req.session.user_id,
+      date: req.body.entryDate,
+      activity_id: element 
+    });
+  });
+  try { 
+    const activityLogData = await ActivityLog.bulkCreate(newActivities);
+    res.status(200).json(activityLogData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+// Return the total count for the selected activity for the current user
+router.get('/activity-count/:id', async (req, res) => {
+  try {
+    const activityCount = await ActivityLog.count({ 
+      where: { 
+        activity_id: req.params.id, 
+        user_id: req.session.user_id 
+        }
+    });
+    res.status(200).json(activityCount)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+// Create the account settings for the active user
 router.post('/settings', async (req, res) => {
   try {
     const dbUserSettings = await UserSettings.create({

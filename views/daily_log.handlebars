@@ -5,10 +5,8 @@
     <input class="form-input" type="date" id="date-log" />
   </div>
    {{#each activities as |activity|}}
-  <div class="form-group">
     <label for="{{activity.name}}">{{activity.name}}</label>
-    <input class="form-input activity-input" type="checkbox" name="{{activity.name}}"/>
-  </div>
+    <input class="form-input activity-input" type="checkbox" name="{{activity.name}}" value="{{activity.id}}"/>
     {{/each}}
   <div class="form-group">
     <label for="journal-entry">Journal Entry:</label>

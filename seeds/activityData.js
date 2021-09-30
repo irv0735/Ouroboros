@@ -1,6 +1,6 @@
 const { Activity } = require('../models');
 
-const userData = [
+const activityData = [
   {
     name: 'Meditation',
     description: 'quiet time to think and shit',
@@ -27,6 +27,6 @@ const userData = [
   }
 ];
 
-const seedActivity = () => Activity.bulkCreate(userData);
+const seedActivity = () => Activity.bulkCreate(activityData);
 
 module.exports = seedActivity;

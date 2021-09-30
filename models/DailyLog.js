@@ -14,6 +14,7 @@ DailyLog.init(
     date: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     journal: {
       type: DataTypes.STRING,
@@ -34,7 +35,7 @@ DailyLog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'daily-log',
+    modelName: 'dailyLog',
   }
 );
 

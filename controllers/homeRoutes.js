@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User, Activity } = require('../models');
+const sequelize = require('../config/connection');
+const { User, UserSettings, Activity, ActivityLog } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders the homepage
@@ -25,10 +26,26 @@ router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-    });
+      include: [{ model: Activity, through: ActivityLog, as: 'user_activities', 
+                  attributes: ['id', 'name', 'points', 'badge_requires' ]},
+                { model: UserSettings, attributes: ['bio'] }
+              ]
+    })
     const userClean = userData.get({ plain: true });
-    res.render('dashboard', { ...userClean, logged_in: req.session.logged_in });
+    userClean.user_activities.forEach( async (element) => {
+      const activityCount = await ActivityLog.count({ 
+        where: { 
+          activity_id: element.id, 
+          user_id: req.session.user_id 
+          }
+      });
+      const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
+      element.userPercent = userPercentage;
+    });
+    console.log(userClean);
+    res.render('dashboard', { ...userClean, logged_in: true }); 
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -49,7 +66,7 @@ router.get('/account_creation', (req, res) => {
 // Renders the account-settings form page for the session user
 router.get('/account_details', withAuth, (req, res) => {
   try {
-    res.render('account_details', { logged_in: req.session.logged_in });
+    res.render('account_details', { logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -59,7 +76,7 @@ router.get('/account_details', withAuth, (req, res) => {
 router.get('/daily_log', withAuth, async (req, res) => {
   try {
     const activityData = await Activity.findAll({
-      attributes: ['name'],
+      attributes: ['id', 'name'],
     });
     const activities = activityData.map((activity) =>
       activity.get({ plain: true })

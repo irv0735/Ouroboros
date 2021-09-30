@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Activity extends Model {}
+class ActivityLog extends Model {}
 
-Activity.init(
+ActivityLog.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,36 +11,37 @@ Activity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    date: {
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    points: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10
+      references: {
+        model: 'user',
+        key: 'id',
+        unique: false
+      }
     },
-    badge_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    badge_requires: {
+    activity_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 100
-    } 
+      references: {
+        model: 'activity',
+        key: 'id',
+        unique: false
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'activity',
+    modelName: 'activityLog',
   }
 );
 
-module.exports = Activity;
+module.exports = ActivityLog;
