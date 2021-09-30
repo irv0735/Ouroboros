@@ -144,6 +144,7 @@ img {
 .content {
   text-align: center;
   margin-top: 3vh;
+  width: 75vw;
   padding: 3vw;
   border-radius: 50px;
   border-radius: 50px;
@@ -211,16 +212,12 @@ img {
   align-items: center;
 }
 
-/* CAROUSEL */
-.carousel {
-  background: #eee;
-  margin-bottom: 4vh;
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
 }
-
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8c8;
-  border-radius: 5px;
+.activity-img {
+  margin: 2vw;
+  width: 25vw;
 }

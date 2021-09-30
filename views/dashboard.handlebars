@@ -8,7 +8,7 @@
 -->
 
 {{#each user_activities as |activity|}}
-{{activity.name}}
+<p class="activity-name">{{activity.name}}</p>
 <div class="progress" data-percent="{{activity.userPercent}}">
   <div class="skill">
   <div class="outer">
@@ -30,12 +30,7 @@
  </svg> 
 
  </div>
-  <div class="carousel" data-flickity='{ "wrapAround": true }'>
-    <div class="carousel-cell"><img src="https://picsum.photos/id/236/200/300" alt="placeholder image 1"></div>
-    <div class="carousel-cell"><img src="https://picsum.photos/id/237/200/300" alt="placeholder image 2"></div>
-    <div class="carousel-cell"><img src="https://picsum.photos/id/238/200/300" alt="placeholder image 3"></div>
-    <div class="carousel-cell"><img src="https://picsum.photos/id/239/200/300" alt="placeholder image 4"></div>
-  </div>
+    <div class="activity-img"><img src="/images/{{activity.name}}.jpeg" alt="testing badge image"></div>
 </div>
 {{/each}} 
 
