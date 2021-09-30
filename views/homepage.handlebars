@@ -1,6 +1,31 @@
 <!-- Need to link to Create Account Page --> 
-<a href="/account-creation">
-<button>Create Account</button>
-</a>
+<div>
+  <h2>Welcome to our really cool page!</h2>
+</div>
+
+{{#unless logged_in}}
+<div>
+  <form class="form login-form">
+    <div class="form-group">
+      <label for="email-login">email:</label>
+      <input class="form-input" type="text" id="email-login" />
+    </div>
+    <div class="form-group">
+      <label for="password-login">password:</label>
+      <input class="form-input" type="password" id="password-login" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">login</button>
+       Or: 
+        <a href="/account-creation">
+          <button class="btn btn-secondary">Create Account</button>
+        </a> 
+    </div>
+  </form>
+</div>
+<script src="/js/login.js"></script>
+{{/unless}}
+
+
 
 

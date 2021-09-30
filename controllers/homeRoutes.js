@@ -27,7 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Activity, through: ActivityLog, as: 'user_activities', 
-                  attributes: ['id', 'name', 'points', 'badge_requires' ]},
+                  attributes: ['id', 'name', 'points', 'badge_requires', 'badge_name' ]},
                 { model: UserSettings, attributes: ['bio'] }]
     })
     const userClean = userData.get({ plain: true });
@@ -43,7 +43,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
         element.userPercent = userPercentage;
         resolve();
       });
-    }).then(() => res.render('dashboard', { ...userClean, logged_in: true }));
+    }).then(() => {
+    console.log(userClean);
+    res.render('dashboard', { ...userClean, logged_in: true })});
 
   } catch (err) {
     console.log(err);
