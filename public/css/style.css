@@ -216,6 +216,8 @@ img {
   display: flex;
   flex-wrap: wrap;
   margin: 2vw;
+  justify-content: center;
+  align-items: center;
 }
 .activity-img {
   margin: 2vw;
