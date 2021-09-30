@@ -7,7 +7,7 @@ const dailyLogFormHandler = async (event) => {
   const journal = document.querySelector('#journal-log').value.trim();
 
   if (entryDate && journal) {
-    const response = await fetch('/api/users/daily-entry', {
+    const response = await fetch('/api/daily-log', {
       method: 'POST',
       body: JSON.stringify({ entryDate, journal }),
       headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ const dailyLogFormHandler = async (event) => {
   };
   
   if (activityArray != []) {
-      const responseTwo = await fetch('/api/users/activity-log', {
+      const responseTwo = await fetch('/api/activity-log', {
       method: 'POST',
       body: JSON.stringify({ activityArray, entryDate }),
       headers: { 'Content-Type': 'application/json' },
