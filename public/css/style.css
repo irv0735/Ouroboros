@@ -211,16 +211,14 @@ img {
   align-items: center;
 }
 
-/* CAROUSEL */
-.carousel {
-  background: #eee;
-  margin-bottom: 4vh;
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2vw;
+  justify-content: center;
+  align-items: center;
 }
-
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8c8;
-  border-radius: 5px;
+.activity-img {
+  margin: 2vw;
+  width: 25vw;
 }
