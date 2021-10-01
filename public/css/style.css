@@ -48,6 +48,14 @@ main {
   align-items: center;
   justify-content: center;
 }
+.z0 {
+  z-index: -1;
+}
+
+.z2 {
+z-index: 2;
+}
+
 a {
   color: var(--dark);
   text-decoration: none;
@@ -141,6 +149,9 @@ img {
 }
 
 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   margin-top: 3vh;
   padding: 3vw;

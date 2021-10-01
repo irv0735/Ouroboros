@@ -1,30 +1,30 @@
 <!-- Need to link to Create Account Page --> 
-<div>
-  <h2>Welcome to our really cool page!</h2>
+
+  <h2 class ="z2"> <span>☹</span> Welcome <span>☺</span><br> your transformation begins here</h2>
 </div>
-{{>snakebg}}
+<div class ="z0"> {{>snakebg}} </div>
 {{#unless logged_in}}
 <div>
-  <form class="form login-form">
+  <form class="form login-form z2">
     <div class="form-group">
       <label for="email-login">email:</label>
       <input class="form-input" type="text" id="email-login" />
     </div>
-    <div class="form-group">
+    <div class="form-group z2">
       <label for="password-login">password:</label>
       <input class="form-input" type="password" id="password-login" />
     </div>
-    <div class="form-group">
+    <div class="form-group z2">
       <button class="btn btn-primary" type="submit">login</button>
     </div>
   </form>
   <a href="/account-creation">
-    <button class="btn btn-secondary">Create Account</button>
+    <button class="btn btn-secondary z2">Create Account</button>
   </a> 
 </div>
+
 <script src="/js/login.js"></script>
 {{/unless}}
-
 
 
 
