@@ -160,3 +160,8 @@ button {
   margin: 2vw;
   width: 25vw;
 }
+
+.create-side {
+  padding-top: 30px;
+  align-items: center;
+}

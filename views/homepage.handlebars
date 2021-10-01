@@ -5,23 +5,29 @@
 
 <div class ="z0"> {{>snakebg}} </div>
 {{#unless logged_in}}
-<div>
-  <form class="form login-form z2">
-    <div class="form-group">
-      <label for="email-login">email:</label>
-      <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group z2">
-      <label for="password-login">password:</label>
-      <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group z2">
-      <button class="btn btn-primary" type="submit">login</button>
-    </div>
-  </form>
-  <a href="/account-creation">
-    <button class="btn btn-secondary z2">Create Account</button>
-  </a> 
+<div class="display-flex z1">
+  <div class="flex-column col-8">
+    <form class="form login-form z1">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group z2">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group z2">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  <div class="flex-column col-4 create-side">
+    <p>or:</p>
+    <a href="/account-creation">
+      <button class="btn btn-secondary z2">Create Account</button>
+    </a>
+  </div> 
+
 </div>
 
 <script src="/js/login.js"></script>

@@ -1,17 +1,19 @@
 <h2>Account Settings Page</h2>
 
-<form class="form settings-form">
+<form class="form settings-form" data-existing="{{existing_data}}">
   <div class="form-group">
     <label for="bio">Bio:</label>
-    <input class="form-input" type="text" id="bio-settings" value="{{bio}}"/>
+    <input class="form-input" type="textarea" id="bio-settings" value="{{bio}}"/>
   </div>
   <div class="form-group">
     <label for="goals">Goals:</label>
-  <input class="form-input" type="text" id="goals-settings" value="{{goals}}"/>
+  <input class="form-input" type="textarea" id="goals-settings" value="{{goals}}"/>
   </div>
   <div class="form-group">
     <button class="btn btn-primary" type="submit">Save</button>
   </div>
 </form>
+
+<button id="delete-account" class="btn btn-warning">Delete Account</button>
 
 <script src="/js/account_settings.js"></script>

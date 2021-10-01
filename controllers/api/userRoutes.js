@@ -23,6 +23,26 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Delete account from the database
+router.delete('/', async (req, res) => {
+  try {
+    const dbUserData = await User.destroy({
+      where: {
+        id: req.session.user_id
+      },
+    });
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No user found with that ID'});
+    }
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+    res.status(200).json(dbUserData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Create the account settings for the active user
 router.post('/settings', async (req, res) => {
   try {
@@ -36,6 +56,13 @@ router.post('/settings', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+})
+
+// Update the account settings for the active user
+router.put('/settings', async (req, res) => {
+  UserSettings.update(req.body, {where: {user_id: req.session.user_id}} )
+  .then((updatedSettings) => res.json(updatedSettings))
+  .catch((err) => res.status(500).json(err))
 })
 
 // Login route to validate email/password and initiate the session
