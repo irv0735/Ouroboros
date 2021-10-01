@@ -7,8 +7,8 @@
   font-style: normal;
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-/* changed up some of the colors */
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=PT+Sans&display=swap');
+
 :root {
   --primary: #5b49a8;
   --secondary: #329476;
@@ -20,8 +20,6 @@
   --border-radius: 0.3rem;
 }
 
-/* added font family
-changed background */
 body {
   font-family: 'gallery_modernregular';
   margin: 0;
@@ -29,19 +27,16 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-
-  /* background-color: var(--quatrinary); */
   color: var(--dark);
   background: url('/images/bpbg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* background-image: linear-gradient(
-    to left bottom,
-    rgb(0, 8, 121),
-    rgb(21, 247, 255)
-  ); */
+}
+
+.snake {
+  opacity: 50%;
 }
 
 main {
@@ -66,22 +61,31 @@ a:visited {
   color: inherit;
 }
 
+p {
+  font-size: 3vh;
+}
+
 header {
+  display: flex;
+  flex-wrap: wrap;
   padding: 40px;
   height: 200px;
-  /* text-align: center; */
-  /* background: var(--primary); */
   color: var(--light);
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   font-family: 'gallery_modernregular';
   font-weight: normal;
   font-style: normal;
-
-  font-size: 6vw;
+  font-size: 10vh;
   color: var(--dark);
-  /* text-shadow: -5px 5px 16px #4bc0e4; */
+}
+
+h2 {
+  font-size: 6vh;
 }
 
 main {
@@ -90,18 +94,14 @@ main {
   flex-grow: 1;
 }
 
-
-
-
-
 .logo-image {
   border-radius: 50%;
   height: 150px;
   width: 250px;
-  /* box-shadow: -18px 18px 36px #180b40, 18px -18px 36px #5629e8; */
+  margin-right: 15px;
 }
 
-.btn-no-style {
+.btn-logout {
   font-family: 'gallery_modernregular';
   color: var(--dark);
   background: none;
@@ -119,7 +119,6 @@ img {
 }
 
 .content {
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -133,20 +132,22 @@ img {
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
 }
 
-input {
-  font-family: 'Abel', sans-serif;
+.btn {
+  font-size: 3vh;
 }
 
-button {
-  font-family: 'Abel', sans-serif;
+.btn-secondary {
+  margin-top: 3vh;
 }
 
-/* LAYOUT */
 .container {
   display: flex;
   flex-flow: column wrap;
-  /* align-content: flex-start; */
   align-items: center;
+}
+
+.dasboard-content {
+  margin-top: 3vh;
 }
 
 .progress {
@@ -156,9 +157,24 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 .activity-img {
   margin: 2vw;
-  width: 25vw;
+  width: 20vw;
+}
+
+.activity-log {
+  /* width: 500px; */
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-right: 5vw; */
+  justify-content: space-around;
+}
+
+.daily-log-form label {
+  /* width: 10vw; */
+  font-size: 3vh;
 }
 
 .create-side {

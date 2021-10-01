@@ -1,7 +1,7 @@
 <h2>Welcome, {{first_name}}</h2>
 <h3>{{setting.bio}}</h3>
 <a href="/daily-log-entry">
-<button>Daily Log</button>
+<button class='btn btn-primary'>Daily Log</button>
 </a>
 <!--Temp variable capture
 {{activity.name}}: - {{activity.userPercent}} %
@@ -30,7 +30,7 @@
   </svg> 
 
   </div>
-      <div class="activity-img"><img src="/images/{{activity.badge_name}}.png" alt="testing badge image"></div>
+      <div class="activity-img"><img src="/images/{{activity.badge_name}}.png" alt="{{activity.name}} badge image"></div>
   </div>
   {{/each}}
 </div>
