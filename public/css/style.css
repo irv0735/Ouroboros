@@ -62,18 +62,26 @@ p {
 }
 
 header {
+  display: flex;
+  flex-wrap: wrap;
   padding: 40px;
   height: 200px;
   color: var(--light);
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   font-family: 'gallery_modernregular';
   font-weight: normal;
   font-style: normal;
-
-  font-size: 6vw;
+  font-size: 10vh;
   color: var(--dark);
+}
+
+h2 {
+  font-size: 6vh;
 }
 
 main {
@@ -86,6 +94,7 @@ main {
   border-radius: 50%;
   height: 150px;
   width: 250px;
+  margin-right: 15px;
 }
 
 .btn-logout {
