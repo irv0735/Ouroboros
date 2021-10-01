@@ -57,6 +57,10 @@ a:visited {
   color: inherit;
 }
 
+p {
+  font-size: 3vh;
+}
+
 header {
   padding: 40px;
   height: 200px;
@@ -84,7 +88,7 @@ main {
   width: 250px;
 }
 
-.btn-no-style {
+.btn-logout {
   font-family: 'gallery_modernregular';
   color: var(--dark);
   background: none;
@@ -115,18 +119,22 @@ img {
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
 }
 
-input {
-  font-family: 'Abel', sans-serif;
+.btn {
+  font-size: 3vh;
 }
 
-button {
-  font-family: 'Abel', sans-serif;
+.btn-secondary {
+  margin-top: 3vh;
 }
 
 .container {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+}
+
+.dasboard-content {
+  margin-top: 3vh;
 }
 
 .progress {
@@ -136,7 +144,8 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 .activity-img {
   margin: 2vw;
-  width: 25vw;
+  width: 20vw;
 }
