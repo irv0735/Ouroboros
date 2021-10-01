@@ -162,3 +162,17 @@ img {
   margin: 2vw;
   width: 20vw;
 }
+
+.activity-log {
+  /* width: 500px; */
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-right: 5vw; */
+  justify-content: space-around;
+}
+
+.daily-log-form label {
+  /* width: 10vw; */
+  font-size: 3vh;
+}
