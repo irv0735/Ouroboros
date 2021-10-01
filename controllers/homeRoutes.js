@@ -31,21 +31,24 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 { model: UserSettings, attributes: ['bio'] }]
     })
     const userClean = userData.get({ plain: true });
-    const getPercentage = new Promise((resolve, reject) => {
-      userClean.user_activities.forEach( async (element) => {
-        const activityCount = await ActivityLog.count({ 
-          where: { 
-            activity_id: element.id, 
-            user_id: req.session.user_id 
-            }
+    if (!userClean.user_activities[0]) {
+      res.render('dashboard', { ...userClean, logged_in: true });
+    } else {
+      const getPercentage = new Promise((resolve, reject) => {
+        userClean.user_activities.forEach( async (element) => {
+          const activityCount = await ActivityLog.count({ 
+            where: { 
+              activity_id: element.id, 
+              user_id: req.session.user_id 
+              }
+          });
+          const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
+          element.userPercent = userPercentage;
+          resolve();
         });
-        const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
-        element.userPercent = userPercentage;
-        resolve();
-      });
-    }).then(() => {
-    res.render('dashboard', { ...userClean, logged_in: true })});
-
+      }).then(() => {
+      res.render('dashboard', { ...userClean, logged_in: true })});
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
