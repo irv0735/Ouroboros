@@ -54,7 +54,7 @@ main {
 }
 
 .z2 {
-  z-index: 2;
+  z-index: 1;
 }
 
 a {
@@ -90,32 +90,9 @@ main {
   flex-grow: 1;
 }
 
-aside {
-  flex: 0;
-  background-color: var(--tertiary);
-  padding: 80px;
-  text-align: left;
-  color: var(--light);
-}
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-  color: rgb(0, 0, 0);
-  /* background-color: var(--secondary); */
-}
 
-nav a {
-  color: var(--light);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
 
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
-}
 
 .logo-image {
   border-radius: 50%;
@@ -158,44 +135,6 @@ img {
 
 input {
   font-family: 'Abel', sans-serif;
-}
-/* CARDS */
-.card {
-  margin: 20px;
-  flex: 0 1 300px;
-  border: 7px double var(--dark);
-  border-radius: 10px;
-  background-color: var(--light);
-  color: var(--dark);
-}
-
-.login-card {
-  margin: 0 0 20px 0;
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 5px;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-  border-style: double;
-  border-width: thick;
-  background-color: #577a7c;
-  color: var(--light);
-}
-
-.card header {
-  color: var(--light);
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-  background-color: var(--tertiary);
-  padding: 0.625rem;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-
-.card-body {
-  font-size: 1.4rem;
-  text-align: center;
-  font-weight: bold;
 }
 
 button {
