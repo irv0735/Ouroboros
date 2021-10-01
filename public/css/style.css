@@ -54,7 +54,7 @@ main {
 }
 
 .z2 {
-z-index: 2;
+  z-index: 2;
 }
 
 a {
@@ -124,8 +124,6 @@ nav a:hover {
   /* box-shadow: -18px 18px 36px #180b40, 18px -18px 36px #5629e8; */
 }
 
-
-
 .btn-no-style {
   font-family: 'gallery_modernregular';
   color: var(--dark);
@@ -144,7 +142,7 @@ img {
 }
 
 .content {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   text-align: center;
