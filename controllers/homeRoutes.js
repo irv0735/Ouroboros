@@ -76,10 +76,10 @@ router.get('/account-settings', withAuth, async (req, res) => {
       attributes: ['bio', 'goals'] } );
     if (userSettings) {
       const cleanSettings = userSettings.get({ plain: true });
-      res.render('account_settings', {...cleanSettings, logged_in: true })
+      res.render('account_settings', {...cleanSettings, logged_in: true, existing_data: true })
     }
     else {
-      res.render('account_settings', {logged_in: true})
+      res.render('account_settings', { logged_in: true, existing_data: false })
     }
   } catch (err) {
     console.log(err);

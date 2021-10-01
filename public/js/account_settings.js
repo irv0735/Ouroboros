@@ -3,22 +3,54 @@ const settingsFormHandler = async (event) => {
   event.preventDefault();
   const bio = document.querySelector('#bio-settings').value.trim();
   const goals = document.querySelector('#goals-settings').value.trim();
-
-  if (bio && goals) {
-    const response = await fetch('/api/users/settings', {
-      method: 'POST',
-      body: JSON.stringify({ bio, goals }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
+  const previousData = document.querySelector('.settings-form').dataset.existing;
+  if (previousData === "false") {
+    if (bio && goals) {
+      const response = await fetch('/api/users/settings', {
+        method: 'POST',
+        body: JSON.stringify({ bio, goals }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to save-settings.');
+      }
     } else {
-      alert('Failed to create account.');
+    alert("You must enter both a bio and goal to continue!");
     }
   } else {
-  alert("You must enter botha bio and goal to continue!");
+    if (bio && goals) {
+      const response = await fetch('/api/users/settings', {
+        method: 'PUT',
+        body: JSON.stringify({ bio, goals }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to save settings.');
+      }
+    } else {
+    alert("You must enter both a bio and goal to continue!");
+    }
   }
 };
 
+const deleteAccountHandler = async (event) => {
+  event.preventDefault();
+  const response = await fetch('/api/users', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert('Failed to delete account. ');
+  }
+}
+
 document.querySelector('.settings-form').addEventListener('submit', settingsFormHandler);
+document.querySelector('#delete-account').addEventListener('click', deleteAccountHandler);

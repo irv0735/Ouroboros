@@ -176,3 +176,8 @@ img {
   /* width: 10vw; */
   font-size: 3vh;
 }
+
+.create-side {
+  padding-top: 30px;
+  align-items: center;
+}
