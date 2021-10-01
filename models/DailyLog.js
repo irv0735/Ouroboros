@@ -20,6 +20,10 @@ DailyLog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    emotion: {
+      type: DatatTypes.STRING,
+      allowNull: true
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
