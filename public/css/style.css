@@ -73,7 +73,7 @@ h1 {
 
   font-size: 6vw;
   color: var(--dark);
-  text-shadow: -5px 5px 16px #4bc0e4;
+  /* text-shadow: -5px 5px 16px #4bc0e4; */
 }
 
 main {
