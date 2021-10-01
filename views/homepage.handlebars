@@ -1,10 +1,7 @@
 <!-- Need to link to Create Account Page --> 
 
   <h2 class ="z2"> <span>☹</span> Welcome <span>☺</span><br> your transformation begins here</h2>
-</div>
-
-<div class ="z0"> {{>snakebg}} </div>
-{{#unless logged_in}}
+  {{#unless logged_in}}
 <div>
   <form class="form login-form z2">
     <div class="form-group">
@@ -26,6 +23,10 @@
 
 <script src="/js/login.js"></script>
 {{/unless}}
+
+</div>
+
+<div class="snake z0"> {{>snakebg}} </div>
 
 
 
