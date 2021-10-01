@@ -8,6 +8,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 /* changed up some of the colors */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=PT+Sans&display=swap');
 :root {
   --primary: #5b49a8;
   --secondary: #329476;
@@ -72,7 +73,7 @@ h1 {
 
   font-size: 6vw;
   color: var(--dark);
-  text-shadow: -5px 5px 16px #4bc0e4;
+  /* text-shadow: -5px 5px 16px #4bc0e4; */
 }
 
 main {
@@ -152,6 +153,9 @@ img {
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
 }
 
+input {
+  font-family: 'Abel', sans-serif;
+}
 /* CARDS */
 .card {
   margin: 20px;
@@ -191,15 +195,8 @@ img {
   font-weight: bold;
 }
 
-.gallery-name {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
+button {
+  font-family: 'Abel', sans-serif;
 }
 
 /* LAYOUT */
