@@ -41,6 +41,8 @@
               <li><a href="/">Home</a></li>
               {{#if logged_in}}
               <li><a href="/dashboard">Dashboard</a></li>
+              {{!-- need to rename link to daily-log after Nate's commit --}}
+              <li><a href="/daily-log-entry">Daily Log</a></li>
               <li> <a href="/account-settings">Account Settings</a></li>
               <li><button id="logout" class="btn-logout">Logout</button></li>
               {{else}}
