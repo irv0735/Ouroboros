@@ -170,6 +170,7 @@ img {
 .activity-img {
   margin: 2vw;
   width: 20vw;
+  max-width: 200px;
 }
 
 .activity-log {
