@@ -125,12 +125,20 @@ img {
   text-align: center;
   margin-top: 3vh;
   padding: 3vw;
+  /* border-radius: 50px;
   border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 44px; */
   border-radius: 44px;
-  border-radius: 44px;
-  background: linear-gradient(145deg, #cedde6, #f5ffff);
+  background: linear-gradient(145deg, #cecee6, #f5ffff);
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
+}
+
+.card {
+  padding: 2vw;
+  margin-bottom: 2vh;
+  border-radius: 44px;
+  background: linear-gradient(145deg, #f1f1ff, #9e97b8);
+  box-shadow: 28px 28px 56px #f5ffff, -28px -28px 56px #feffff;
 }
 
 .btn {
@@ -143,7 +151,7 @@ img {
 
 .container {
   display: flex;
-  flex-flow: column wrap;
+  /* flex-flow: column wrap; */
   align-items: center;
 }
 
@@ -162,15 +170,16 @@ img {
 .activity-img {
   margin: 2vw;
   width: 20vw;
+  max-width: 200px;
 }
 
 .activity-log {
   /* width: 500px; */
-  /* display: flex; */
-  /* justify-content: center; */
-  align-items: center;
+  display: flex;
+  /* justify-content: flex-end; */
+  /* align-items: center; */
   /* margin-right: 5vw; */
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .daily-log-form label {
@@ -178,7 +187,43 @@ img {
   font-size: 3vh;
 }
 
+.activity-input {
+  /* font-size: large; */
+  height: 3vh;
+  align-self: center;
+  /* position: fixed;
+  right: 0; */
+}
+
 .create-side {
   padding-top: 30px;
   align-items: center;
+}
+
+.logs {
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.log-group {
+  margin: 4vw;
+}
+
+.history-content {
+  /* width: 30vw; */
+  display: block;
+  border: 2px solid var(--dark);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+td {
+  border-right: 1px solid var(--dark);
+  padding: 7px;
+}
+
+.no-border {
+  border: none;
 }
