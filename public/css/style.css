@@ -134,8 +134,8 @@ img {
 }
 
 .card {
-  padding: 4vw;
-  border: none;
+  padding: 2vw;
+  margin-bottom: 2vh;
   border-radius: 44px;
   background: linear-gradient(145deg, #f1f1ff, #9e97b8);
   box-shadow: 28px 28px 56px #f5ffff, -28px -28px 56px #feffff;
@@ -202,8 +202,9 @@ img {
 
 .logs {
   /* align-items: center; */
+  justify-content: center;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .log-group {
