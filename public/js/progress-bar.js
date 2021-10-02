@@ -21,7 +21,7 @@ const { response } = require("express");
       const creativeDiv = document.innerHTML.suggestionDiv =  + " your world might not feel very colorful today may we suggest doing something creative?"
                 "Maybe write in a journal, create an en plein air painting or go to the museum."
             
-                const movementDiv = document.innerHTML.suggestionDiv = "GET YA ASS UP "
+      const movementDiv = document.innerHTML.suggestionDiv = "Movement and exercise is said to  "
 
     }
   });
