@@ -6,7 +6,8 @@ router.post('/', async (req, res) => {
   try {
     const dbDailyData = await DailyLog.create({
       date: req.body.entryDate,
-      journal: req.body.journal, 
+      journal: req.body.journal,
+      emotion: req.body.emotion, 
       user_id: req.session.user_id
     });
     res.status(200).json(dbDailyData);
