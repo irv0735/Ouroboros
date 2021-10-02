@@ -151,7 +151,7 @@ img {
 
 .container {
   display: flex;
-  flex-flow: column wrap;
+  /* flex-flow: column wrap; */
   align-items: center;
 }
 
@@ -175,16 +175,24 @@ img {
 
 .activity-log {
   /* width: 500px; */
-  /* display: flex; */
-  /* justify-content: center; */
-  align-items: center;
+  display: flex;
+  /* justify-content: flex-end; */
+  /* align-items: center; */
   /* margin-right: 5vw; */
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .daily-log-form label {
   /* width: 10vw; */
   font-size: 3vh;
+}
+
+.activity-input {
+  /* font-size: large; */
+  height: 3vh;
+  align-self: center;
+  /* position: fixed;
+  right: 0; */
 }
 
 .create-side {
@@ -193,13 +201,17 @@ img {
 }
 
 .logs {
+  /* align-items: center; */
   display: flex;
+  /* flex-wrap: wrap; */
 }
 
 .log-group {
-  margin: 7vw;
+  margin: 4vw;
 }
 
 .history-content {
-  display: flex;
+  /* width: 30vw; */
+  display: block;
+  border: 2px solid red;
 }
