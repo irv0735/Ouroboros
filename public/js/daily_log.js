@@ -6,10 +6,9 @@ const dailyLogFormHandler = async (event) => {
   const entryDate = document.querySelector('#date-log').value;
   const journal = document.querySelector('#journal-log').value.trim();
   let emotion = "";
-  console.log(activityArray, entryDate, journal);
+
   if(journal !== null) {
     let newFeelingInput = journal.replaceAll(" ", "%20");
-    console.log(newFeelingInput);
     let feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
     const getEmotion = new Promise((resolve, reject) => {
       fetch(feelingAPI, {
@@ -23,8 +22,6 @@ const dailyLogFormHandler = async (event) => {
         return response.json()
       })
       .then(function(data) {
-        console.log(data);
-        console.log(data.emotions_detected[0]);
         emotion = data.emotions_detected[0];
         resolve();
         return;
@@ -34,7 +31,6 @@ const dailyLogFormHandler = async (event) => {
       });
       
     }).then( async () => {
-      console.log(emotion);
       if (entryDate && journal) {
         const response = await fetch('/api/daily-log', {
           method: 'POST',
