@@ -15,29 +15,31 @@
 
 <div class="dasboard-content">
   {{#each user_activities as |activity|}}
-  <p class="activity-name">{{activity.name}}</p>
-  <div class="progress" data-percent="{{activity.userPercent}}">
-    <div class="skill">
-    <div class="outer">
-      <div class="inner">
-        <div id="number">
+  <div class="card">
+    <p class="activity-name">{{activity.name}}</p>
+      <div class="progress" data-percent="{{activity.userPercent}}">
+        <div class="skill">
+        <div class="outer">
+          <div class="inner">
+            <div id="number">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- this will be customized later! -->
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-          <defs>
-              <linearGradient id="GradientColor">
-                <stop offset="0%" stop-color="#c3446f" />
-                <stop offset="50%" stop-color="#95965e" />
-                <stop offset="100%" stop-color="#5e967b" />
-              </linearGradient>
-          </defs>
-          <circle class="anim-{{activity.userPercent}}" cx="80" cy="80" r="70" stroke-linecap="round" />
-  </svg> 
+        <!-- this will be customized later! -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+              <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#c3446f" />
+                    <stop offset="50%" stop-color="#95965e" />
+                    <stop offset="100%" stop-color="#5e967b" />
+                  </linearGradient>
+              </defs>
+              <circle class="anim-{{activity.userPercent}}" cx="80" cy="80" r="70" stroke-linecap="round" />
+      </svg> 
 
-  </div>
-      <div class="activity-img"><img src="/images/{{activity.badge_name}}.png" alt="{{activity.name}} badge image"></div>
+      </div>
+          <div ><img class="activity-img" src="/images/{{activity.badge_name}}.png" alt="{{activity.name}} badge image"></div>
+      </div>
   </div>
   {{/each}}
 </div>
