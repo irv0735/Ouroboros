@@ -125,12 +125,20 @@ img {
   text-align: center;
   margin-top: 3vh;
   padding: 3vw;
+  /* border-radius: 50px;
   border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 44px; */
   border-radius: 44px;
-  border-radius: 44px;
-  background: linear-gradient(145deg, #cedde6, #f5ffff);
+  background: linear-gradient(145deg, #cecee6, #f5ffff);
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
+}
+
+.card {
+  padding: 4vw;
+  border: none;
+  border-radius: 44px;
+  background: linear-gradient(145deg, #f1f1ff, #9e97b8);
+  box-shadow: 28px 28px 56px #f5ffff, -28px -28px 56px #feffff;
 }
 
 .btn {
@@ -181,4 +189,16 @@ img {
 .create-side {
   padding-top: 30px;
   align-items: center;
+}
+
+.logs {
+  display: flex;
+}
+
+.log-group {
+  margin: 7vw;
+}
+
+.history-content {
+  display: flex;
 }
