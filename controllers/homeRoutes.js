@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, UserSettings, Activity, ActivityLog } = require('../models');
+const { User, UserSettings, Activity, ActivityLog, DailyLog } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders the homepage
@@ -87,19 +87,52 @@ router.get('/account-settings', withAuth, async (req, res) => {
   }
 });
 
-// Renders the Daily Log form for the session user
-router.get('/daily-log-entry', withAuth, async (req, res) => {
+// Renders the Daily Log page for the session user
+router.get('/daily-log', withAuth, async (req, res) => {
   try {
     const activityData = await Activity.findAll({
       attributes: ['id', 'name'],
     });
-    const activities = activityData.map((activity) =>
-      activity.get({ plain: true })
-    );
-    res.render('daily_log_entry', {
-      activities,
-      logged_in: true,
-    });
+    const activities = activityData.map((activity) => activity.get({ plain: true }));
+    
+    const dailyData = await DailyLog.findAll({
+      where: {user_id: req.session.user_id},
+      attributes: ['date', 'journal', 'emotion'] 
+    })
+    const dailyHistory = dailyData.map((log) => log.get({ plain: true }));
+    if (dailyHistory) {
+      const getActivities = new Promise((resolve, reject) => {
+        dailyHistory.forEach(async (element) => {
+          const activityLogData = await ActivityLog.findAll({
+            where: {user_id: req.session.user_id,
+                    date: element.date},
+            include: [{model: Activity, attributes: ['name']}],
+            })
+          element.activities = activityLogData;
+          resolve();
+        });
+      }).then(() => {
+        console.log(activities, dailyHistory);
+        res.render('daily_log', {
+          activities,
+          dailyHistory,
+          logged_in: true,
+        });
+      })
+    } else {
+      res.render('daily_log', {
+        activities,
+        dailyHistory,
+        logged_in: true,
+      })
+    }
+    // const activityLogData = await ActivityLog.findAll({
+    //   where: {user_id: req.session.user_id,},
+    //   include: [{model: Activity, attributes: ['name']}],
+    //   })
+    // const activityHistory = activityLogData.map((activity) => activity.get({ plain: true }));
+    // console.log(activities, dailyHistory);
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
