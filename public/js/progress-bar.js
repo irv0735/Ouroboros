@@ -1,22 +1,7 @@
-  
-  // let number = document.getElementById("number");
-  // let counter = 0;
+const suggestionDiv = document.getElementById('suggestion-content');
+  //fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
 
-  // let percentage = document.querySelector('.progress').dataset.percent;
-
-  // setInterval(() => {
-  //   //store users progress points
-  //   //pull this number from db? replace the 65
-  //   //edit css animation
-  //   if(counter == percentage){
-  //     clearInterval();
-  //   } else {
-  //        counter += 1;
-  //   number.innerHTML = counter + "%";
-  //   }
- 
-  // }, 20);
-
+const { response } = require("express");
 
   const innerNumbers = document.querySelectorAll('#number');
 
@@ -31,4 +16,16 @@
         element.innerHTML = counter + '%';
       }
     }, 20);
+
+    if (element< 50) {
+      const creativeDiv = document.innerHTML.suggestionDiv =  + " your world might not feel very colorful today may we suggest doing something creative?"
+                "Maybe write in a journal, create an en plein air painting or go to the museum."
+            
+                const movementDiv = document.innerHTML.suggestionDiv = "GET YA ASS UP "
+
+    }
   });
+
+
+
+

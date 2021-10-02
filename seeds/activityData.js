@@ -59,12 +59,11 @@ const activityData = [
   },
 
   {
-    name: 'Sober',
-    description: 'drugs are fun but sometimes not always',
+    name: 'CBT',
+    description: 'cognitive behavioral therapy',
     points: 10,
-    badge_name: 'sobriety'
-  }
-];
+    badge_name: 'cbt'
+  }];
 
 const seedActivity = () => Activity.bulkCreate(activityData);
 
