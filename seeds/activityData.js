@@ -24,6 +24,12 @@ const activityData = [
     description: 'act like a pretzel',
     points: 10,
     badge_name: 'yoga'
+  },
+  {
+    name: 'Creative',
+    description: 'get your head into the clouds',
+    points: 10,
+    badge_name: 'creative'
   }
 ];
 

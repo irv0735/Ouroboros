@@ -1,11 +1,18 @@
+
+
 <h2>Welcome, {{first_name}}</h2>
 <h3>{{setting.bio}}</h3>
 <a href="/daily-log-entry">
 <button class='btn btn-primary'>Daily Log</button>
 </a>
+
+<div id= "suggestion-content" class="suggestion-content">
+  {{>creative}}
+</div>
 <!--Temp variable capture
 {{activity.name}}: - {{activity.userPercent}} %
 -->
+
 <div class="dasboard-content">
   {{#each user_activities as |activity|}}
   <p class="activity-name">{{activity.name}}</p>
