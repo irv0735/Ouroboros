@@ -17,8 +17,12 @@ DailyLog.init(
       defaultValue: DataTypes.NOW,
     },
     journal: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
+    },
+    emotion: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     user_id: {
       type: DataTypes.INTEGER,
