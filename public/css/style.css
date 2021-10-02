@@ -214,5 +214,16 @@ img {
 .history-content {
   /* width: 30vw; */
   display: block;
-  border: 2px solid red;
+  border: 2px solid var(--dark);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+td {
+  border-right: 1px solid var(--dark);
+  padding: 7px;
+}
+
+.no-border {
+  border: none;
 }
