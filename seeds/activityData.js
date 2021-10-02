@@ -24,6 +24,45 @@ const activityData = [
     description: 'act like a pretzel',
     points: 10,
     badge_name: 'yoga'
+  },
+  {
+    name: 'Creative',
+    description: 'get your head into the clouds',
+    points: 10,
+    badge_name: 'creative'
+  },
+  {
+    name: 'Sleep',
+    description: 'get 8 hours plz',
+    points: 10,
+    badge_name: 'sleep'
+  },
+
+  {
+    name: 'Sunshine',
+    description: 'get outside you pale ass lizard person',
+    points: 10,
+    badge_name: 'sunshine'
+  },
+  {
+    name: 'Nutrition',
+    description: 'eat a salad you big fat fattie',
+    points: 10,
+    badge_name: 'nutrition'
+  },
+
+  {
+    name: 'Gratitude',
+    description: 'eat a salad you big fat fattie',
+    points: 10,
+    badge_name: 'gratitude'
+  },
+
+  {
+    name: 'Sober',
+    description: 'drugs are fun but sometimes not always',
+    points: 10,
+    badge_name: 'sobriety'
   }
 ];
 
