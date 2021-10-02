@@ -7,17 +7,21 @@ const suggestionDiv = document.getElementById('suggestion-content');
 const feedback = async () => {
     const response = await fetch('/api/activity-log', {
         headers: { 'Content-Type': 'application/json' },
-      });
-        for (let i = 0; i < response.length; i++) {
-            const responseIndex = response[i];
+        //how are we getting back the points data 
+        //the response we send back will just be the total
+        //get a count of activity query activity model 
+        //gt back all activies and points nad 
+      })
+     
             
             if (responseIndex < 50) {
-                document.innerHTML.suggestionDiv = {{first_name}} + " your world might not feel very colorful today may we suggest doing something creative?"
-                "Maybe write in a journal, create an en plein air painting or go to the museum." 
-                
-            } else {
-        //do i need to loop through first? 
-        return Math.floor(Math.random(activity.badge_name));
-    }
+              const creativeDiv = document.innerHTML.suggestionDiv =  + " your world might not feel very colorful today may we suggest doing something creative?"
+                "Maybe write in a journal, create an en plein air painting or go to the museum."
+            
+                const movementDiv = document.innerHTML.suggestionDiv = "GET YA ASS UP "
+            
+            
+            
+            }
+
 }
-};
