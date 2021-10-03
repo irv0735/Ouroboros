@@ -1,7 +1,7 @@
-const suggestionDiv = document.getElementById('suggestion-content');
-  //fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
+// const suggestionDiv = document.getElementById('suggestion-content');
+//fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
 
-const { response } = require("express");
+// const { response } = require("express");
 
   const innerNumbers = document.querySelectorAll('#number');
 
@@ -17,13 +17,13 @@ const { response } = require("express");
       }
     }, 20);
 
-    if (element< 50) {
-      const creativeDiv = document.innerHTML.suggestionDiv =  + " your world might not feel very colorful today may we suggest doing something creative?"
-                "Maybe write in a journal, create an en plein air painting or go to the museum."
+    // if (element< 50) {
+    //   const creativeDiv = document.innerHTML.suggestionDiv =  + " your world might not feel very colorful today may we suggest doing something creative?"
+    //             "Maybe write in a journal, create an en plein air painting or go to the museum."
             
-                const movementDiv = document.innerHTML.suggestionDiv = "GET YA ASS UP "
+    //             const movementDiv = document.innerHTML.suggestionDiv = "GET YA ASS UP "
 
-    }
+    // }
   });
 
 

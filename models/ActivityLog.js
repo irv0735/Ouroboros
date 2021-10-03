@@ -12,15 +12,15 @@ ActivityLog.init(
       autoIncrement: true,
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    daily_log_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false, 
       references: {
-        model: 'user',
+        model: 'dailyLog',
         key: 'id',
         unique: false
       }
@@ -31,6 +31,15 @@ ActivityLog.init(
       references: {
         model: 'activity',
         key: 'id',
+        unique: false
+      }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        moedl: 'user',
+        key: 'id', 
         unique: false
       }
     }

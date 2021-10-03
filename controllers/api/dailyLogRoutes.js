@@ -10,7 +10,8 @@ router.post('/', async (req, res) => {
       emotion: req.body.emotion, 
       user_id: req.session.user_id
     });
-    res.status(200).json(dbDailyData);
+    const cleanDaily = dbDailyData.get({ plain: true});
+    res.status(201).json(cleanDaily);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -13,8 +13,8 @@ User.hasMany(DailyLog, {
   foreignKey: 'user_id'
 });
 
-User.hasMany(ActivityLog, {
-  foreighKey: 'user_id'
+DailyLog.hasMany(ActivityLog, {
+  foreighKey: 'daily_log_id'
 });
 
 Activity.hasMany(ActivityLog, {

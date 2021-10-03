@@ -8,7 +8,8 @@ router.post('/', async (req, res) => {
     newActivities.push({
       user_id: req.session.user_id,
       date: req.body.entryDate,
-      activity_id: element 
+      activity_id: element,
+      daily_log_id: req.body.daily_log_id 
     });
   });
   try { 

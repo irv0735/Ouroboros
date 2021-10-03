@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irv0735/Lucid-Harmonization.git"
+    "url": "git+https://github.com/irv0735/Ouroboros.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/irv0735/Lucid-Harmonization/issues"
+    "url": "https://github.com/irv0735/Ouroboros/issues"
   },
-  "homepage": "https://github.com/irv0735/Lucid-Harmonization#readme",
+  "homepage": "https://github.com/irv0735/Ouroboros#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
