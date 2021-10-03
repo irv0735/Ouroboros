@@ -20,3 +20,11 @@ anime
     easing: 'easeOutExpo',
     delay: 1000,
   });
+
+anime({
+  targets: '.dashboard-card',
+  //   translateX: 250,
+  scale: 1,
+  rotate: '1turn',
+  duration: 3000,
+});
