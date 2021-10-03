@@ -102,7 +102,7 @@ router.get('/daily-log', withAuth, async (req, res) => {
                 include: [{model: Activity, attributes: ['name']}]}] 
     })
     const dailyHistory = dailyData.map((log) => log.get({ plain: true }));
-    console.log(dailyHistory);
+
     res.render('daily_log', {
       activities,
       dailyHistory,
