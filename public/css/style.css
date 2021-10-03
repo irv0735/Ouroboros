@@ -136,7 +136,7 @@ img {
 
 .card {
   padding: 2vw;
-  margin-bottom: 2vh;
+  margin: 2vh;
   border-radius: 44px;
   background: linear-gradient(145deg, #f1f1ff, #9e97b8);
   box-shadow: 28px 28px 56px #f5ffff, -28px -28px 56px #feffff;
@@ -157,7 +157,11 @@ img {
 }
 
 .dasboard-content {
-  margin-top: 3vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3vh;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .progress {
