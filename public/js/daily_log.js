@@ -5,7 +5,7 @@ const dailyLogFormHandler = async (event) => {
   const activityArray = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(item => item.value);
   const entryDate = document.querySelector('#date-log').value;
   const journal = document.querySelector('#journal-log').value.trim();
-  let emotion = "";
+  let emotion = "undetected";
 
   if(entryDate && journal !== null) {
     let newFeelingInput = journal.replaceAll(" ", "%20");
