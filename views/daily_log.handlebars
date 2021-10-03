@@ -37,12 +37,11 @@
         <td>{{history.date}}</td>
         <td>{{history.journal}}</td>
         <td>
-          {{!-- {{#each activityLogs as |activityLog|}} --}}
-          {{!-- <tr>{{history.activityLog}}</tr> --}}
-          {{!-- <td>activity</td> --}}
-          {{!-- {{/each}} --}}
+          {{#each activityLogs as |activityLog|}}
+          history.activityLog.activity_id     
+          {{/each}}
         </td>
-        <td class="no-border">{{emotion}}</td>
+        <td class="no-border">{{history.emotion}}</td>
       </tr>
       {{/each}}
   
