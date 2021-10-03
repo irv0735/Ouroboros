@@ -14,25 +14,40 @@ router.post('/', async (req, res) => {
   });
   try { 
     const activityLogData = await ActivityLog.bulkCreate(newActivities);
-    res.status(200).json(activityLogData);
+    res.status(201).json(activityLogData);
   } catch (err) {
     res.status(500).json(err);
   }
 })
 
-// Return the total count for the selected activity for the current user
-router.get('/activity-count/:id', async (req, res) => {
+// Return specified number of most recent activities logged for all users
+router.get('/:limit', async (req, res) => {
   try {
-    const activityCount = await ActivityLog.count({ 
-      where: { 
-        activity_id: req.params.id, 
-        user_id: req.session.user_id 
-        }
+    const activityLogData = await ActivityLog.findAll({
+      limit: req.params.count
     });
-    res.status(200).json(activityCount)
+    const activityLog = activityLogData.get({ plain: true });
+    res.status(200).json(activityLog);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 })
+
+// Unused 
+// Return the total count for the selected activity for the current user
+// router.get('/activity-count/:id', async (req, res) => {
+//   try {
+//     const activityCount = await ActivityLog.count({ 
+//       where: { 
+//         activity_id: req.params.id, 
+//         user_id: req.session.user_id 
+//         }
+//     });
+//     res.status(200).json(activityCount)
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// })
 
 module.exports = router;

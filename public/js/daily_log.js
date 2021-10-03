@@ -22,7 +22,9 @@ const dailyLogFormHandler = async (event) => {
         return response.json()
       })
       .then(function(data) {
-        emotion = data.emotions_detected[0];
+        if (data.emotions_detected[0]) {
+          emotion = data.emotions_detected[0];
+        }
         resolve();
         return;
       })

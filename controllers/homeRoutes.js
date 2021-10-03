@@ -97,6 +97,7 @@ router.get('/daily-log', withAuth, async (req, res) => {
     
     const dailyData = await DailyLog.findAll({
       where: {user_id: req.session.user_id},
+      order: [['date', 'DESC']],
       attributes: ['date', 'journal', 'emotion'], 
       include: [{model: ActivityLog, attributes: ['activity_id'], 
                 include: [{model: Activity, attributes: ['name']}]}] 
