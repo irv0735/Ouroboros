@@ -177,6 +177,7 @@ img {
 .activity-log {
   /* width: 500px; */
   display: flex;
+  /* float: right; */
   /* justify-content: flex-end; */
   /* align-items: center; */
   /* margin-right: 5vw; */
@@ -184,7 +185,7 @@ img {
 }
 
 .daily-log-form label {
-  /* width: 10vw; */
+  width: 20vw;
   font-size: 3vh;
 }
 
@@ -192,8 +193,11 @@ img {
   /* font-size: large; */
   height: 3vh;
   align-self: center;
-  /* position: fixed;
-  right: 0; */
+  margin: 0;
+  /* display: inline; */
+  /* flex-direction: column; */
+  /* position: fixed; */
+  /* right: 0; */
 }
 
 .create-side {
@@ -221,9 +225,19 @@ img {
   max-width: 600px;
 }
 
+th {
+  font-size: 3vh;
+}
+
 td {
   border-right: 1px solid var(--dark);
   padding: 7px;
+  font-size: 2.1vh;
+}
+
+.activity-table-data ul {
+  margin: 0;
+  float: left;
 }
 
 .no-border {

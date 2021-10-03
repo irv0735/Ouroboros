@@ -36,9 +36,11 @@
       <tr>
         <td>{{history.date}}</td>
         <td>{{history.journal}}</td>
-        <td>
+        <td class='activity-table-data'>
           {{#each activityLogs as |activityLog|}}
-          {{activityLog.activity.name}}
+          <ul>
+            <li>{{activityLog.activity.name}}</li>
+          </ul>
           {{/each}}
         </td>
         <td class="no-border">{{history.emotion}}</td>
