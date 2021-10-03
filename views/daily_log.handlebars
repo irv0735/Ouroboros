@@ -32,12 +32,19 @@
         <th>activities</th>
         <th>Emotion</th>
       </tr>
+      {{#each dailyHistory as |history|}}
       <tr>
-        <td>10/02/2021</td>
-        <td>The sun is shining, the tank is clean!</td>
-        <td>running and stuff</td>
-        <td class="no-border">ANGRY!!</td>
+        <td>{{history.date}}</td>
+        <td>{{history.journal}}</td>
+        <td>
+          {{!-- {{#each activityLogs as |activityLog|}} --}}
+          {{!-- <tr>{{history.activityLog}}</tr> --}}
+          {{!-- <td>activity</td> --}}
+          {{!-- {{/each}} --}}
+        </td>
+        <td class="no-border">{{emotion}}</td>
       </tr>
+      {{/each}}
   
     </table>
   </div>

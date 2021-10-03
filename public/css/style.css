@@ -217,6 +217,7 @@ img {
   border: 2px solid var(--dark);
   border-radius: 20px;
   padding: 10px;
+  max-width: 600px;
 }
 
 td {
