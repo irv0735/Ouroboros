@@ -1,5 +1,5 @@
 // const suggestionDiv = document.getElementById('suggestion-content');
-  //fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
+//fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
 
 // const { response } = require("express");
 
