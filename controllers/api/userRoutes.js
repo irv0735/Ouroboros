@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.user_id = dbUserData.dataValues.id;
-      res.status(200).json(dbUserData);
+      res.status(201).json(dbUserData);
     });
   } catch (err) {
     console.log(err);
@@ -51,7 +51,7 @@ router.post('/settings', async (req, res) => {
       goals: req.body.goals,
       user_id: req.session.user_id
     });
-    res.status(200).json(dbUserSettings);
+    res.status(201).json(dbUserSettings);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
