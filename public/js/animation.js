@@ -14,7 +14,7 @@ anime
     delay: (el, i) => 150 * (i + 1),
   })
   .add({
-    targets: '.ml3',
+    targets: 'h1',
     opacity: 0,
     duration: 1000,
     easing: 'easeOutExpo',
@@ -23,8 +23,20 @@ anime
 
 anime({
   targets: '.dashboard-card',
-  //   translateX: 250,
   scale: 1,
   rotate: '1turn',
   duration: 3000,
+});
+
+anime({
+  targets: '.log-card',
+  translateX: {
+    value: [-500, 0],
+    duration: 800,
+  },
+  scale: {
+    value: [0.5, 1],
+    duration: 1600,
+    easing: 'easeInOutQuart',
+  },
 });
