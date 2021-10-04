@@ -1,10 +1,20 @@
 
 
 <h2>Welcome, {{first_name}}</h2>
-<h3>{{setting.bio}}</h3>
-<a href="/daily-log">
-<button class='btn btn-primary'>Daily Log</button>
-</a>
+<div class="flex-row">
+  <div class="col-6">
+    <h3>Bio: {{setting.bio}}</h3>
+    <h4>Goals: {{setting.goals}}</h4>
+  </div>
+  <div class="col-6 flex-row justify-space-around">
+    <a href="/daily-log">
+    <button class='btn btn-primary'>Daily Log Entry</button>
+    </a>
+    <a href="/account-settings">
+    <button class='btn btn-link '>Account Settings</button>
+    </a>
+  </div>
+</div>
 
 <div id= "suggestion-content" class="suggestion-content">
 </div>
