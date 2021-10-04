@@ -28,7 +28,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Activity, through: ActivityLog, as: 'user_activities', 
                   attributes: ['id', 'name', 'points', 'badge_requires', 'badge_name' ]},
-                { model: UserSettings, attributes: ['bio'] }]
+                { model: UserSettings, attributes: ['bio', 'goals'] }]
     })
     const userClean = userData.get({ plain: true });
     if (!userClean.user_activities[0]) {
