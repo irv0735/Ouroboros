@@ -42,11 +42,6 @@ User.init(
       validate: {
         len: [8],
       },
-    },
-    account_status: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: 1
     }
   },
   {

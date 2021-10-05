@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ActivityLog extends Model {}
+class Comment extends Model {}
 
-ActivityLog.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,51 +11,39 @@ ActivityLog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    date: {
-      type: DataTypes.DATEONLY,
+    content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    date_created: {
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    daily_log_id: {
+    activityLog_id: {
       type: DataTypes.INTEGER,
-      allowNull: false, 
       references: {
-        model: 'dailyLog',
+        model: 'activityLog',
         key: 'id',
         unique: false
       }
     },
-    activity_id: {
+    commentor_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: 'activity',
+        model: 'user',
         key: 'id',
         unique: false
-      }
+      },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        moedl: 'user',
-        key: 'id', 
-        unique: false
-      }
-    },
-    public_allowed: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: 1
-    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'activityLog',
+    modelName: 'comment',
   }
 );
 
-module.exports = ActivityLog;
+module.exports = Comment;
