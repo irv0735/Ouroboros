@@ -24,18 +24,19 @@ anime({
   targets: '.dashboard-card',
   scale: 1,
   rotate: '1turn',
-  duration: 3000,
+  duration: 6000,
 });
 
 anime({
   targets: '.log-card',
   translateX: {
     value: [-500, 0],
-    duration: 800,
+    duration: 3000,
   },
   scale: {
     value: [0.5, 1],
     duration: 1600,
     easing: 'easeInOutQuart',
+    delay: 2000,
   },
 });
