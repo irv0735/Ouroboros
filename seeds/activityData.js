@@ -17,7 +17,7 @@ const activityData = [
     name: 'Phone a Friend',
     description: 'Call a loved one to catch up',
     points: 10,
-    badge_name: 'phone' 
+    badge_name: 'phoneafriend' 
   },
   {
     name: 'Yoga',
