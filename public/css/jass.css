@@ -1127,6 +1127,7 @@ form .form-input {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 15px;
 }
 
 .container.container-fluid {

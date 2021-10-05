@@ -1,12 +1,10 @@
-<div id="quoteDiv"></div>
-
 <h2>Welcome, {{first_name}}</h2>
-<div class="flex-row">
-  <div class="col-6">
+<div class="dashboard-header">
+  <div>
     <h3>Bio: {{setting.bio}}</h3>
     <h4>Goals: {{setting.goals}}</h4>
   </div>
-  <div class="col-6 flex-row justify-space-around">
+  <div class=" flex-row justify-center">
     <a href="/daily-log">
     <button class='btn btn-primary'>Daily Log Entry</button>
     </a>
@@ -52,6 +50,8 @@
   </div>
   {{/each}}
 </div>
+
+<div id="quoteDiv" style='font-style: italic'></div>
 
 <script src = "/js/dashboard.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
