@@ -52,13 +52,6 @@ const activityData = [
   },
 
   {
-    name: 'Gratitude',
-    description: 'eat a salad you big fat fattie',
-    points: 10,
-    badge_name: 'gratitude'
-  },
-
-  {
     name: 'CBT',
     description: 'cognitive behavioral therapy',
     points: 10,

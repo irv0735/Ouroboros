@@ -1,28 +1,53 @@
 var randomQuoteDiv = document.getElementById('quoteDiv');
 var refreshButton = document.getElementById('refresh')
-
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
   })
   .then(function(data) {
-    const quote = JSON.stringify(data);
-    for (let i = 0; i < quote.length; i++) {
-      const quoteSingular = quote[i];
-      randomQuoteDiv.innerHTML = quoteSingular;
-      
-    }
-    let randomQuote = quotei[Math.floor(Math.random()*quotei.length)]
+    console.log(data[0]);
+    // let quote = JSON.stringify(data);
+    let randomQuote = Math.floor(Math.random()*data.length);
+    let randomText = data[randomQuote].text;
+    let randomAuthor = data[randomQuote].author;
+    console.log(randomText);
+    console.log(randomAuthor);
+   randomQuoteDiv.innerHTML = randomText + "-" + randomAuthor;
     
   });
 
 
 
 
-refreshButton.addEventListener('click',  function() {
-   randomPoem();
-}
-);
+
+
+// fetch("https://type.fit/api/quotes")
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(data) {
+   
+//       const quote = JSON.stringify(data);
+//       console.log(quote);
+//       for (let i = 0; i < quote.length; i++) {
+//         const quotei = quote[i];
+//         let randomQuote = quotei[Math.floor(Math.random(quotei))]
+//         randomQuoteDiv.innerHTML = quote;
+//       //   refreshButton.addEventListener('click',  function() {
+//       //     randomQuote();
+//       //  }
+//       //  );
+//       } 
+      
+    
+   
+    
+//   });
+
+
+
+
+
 
 
 
