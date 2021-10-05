@@ -158,6 +158,16 @@ img {
   align-items: center;
 }
 
+.dashboard-header .btn {
+  margin: 5px;
+}
+
+.quoteDiv {
+  font-size: 2vh;
+
+  font-style: italic;
+}
+
 .dasboard-content {
   display: flex;
   flex-wrap: wrap;
@@ -222,10 +232,9 @@ img {
   margin: 4vw;
 }
 
-th{
+th {
   font-family: 'gallery_modernregular';
-  color:var(--primary);
-
+  color: var(--primary);
 }
 
 .history-content {
