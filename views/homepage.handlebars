@@ -1,6 +1,7 @@
 <!-- Need to link to Create Account Page --> 
 
 <h2 class ="z2"> <span>☹</span> Welcome <span>☺</span><br> your transformation begins here</h2>
+
 {{#unless logged_in}}
 <div>
   <form class="form login-form z2">
@@ -23,7 +24,22 @@
 
 <script src="/js/login.js"></script>
 {{/unless}}
-
+  <div class="activity-feed z2" >
+    <table>
+      <th>Date</th>
+      <th>Username</th>
+      <th>Log</th>
+      
+    {{#each activities as |activity|}}
+      <tr>
+        <td>{{activity.date}}</td>
+        <td>{{activity.user.display_name}}</td>
+        <td> has completed the activity: {{activity.activity.name}}</td>
+        <td> <button>Add Comment</button> not-functional</td>
+      </tr>
+    {{/each}}
+    </table>
+  </div>
 </div>
 
 <div class="snake z0"> {{>snakebg}} </div>

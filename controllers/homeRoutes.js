@@ -1,13 +1,23 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, UserSettings, Activity, ActivityLog, DailyLog } = require('../models');
+const { User, UserSettings, Activity, ActivityLog, DailyLog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders the homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', { logged_in: req.session.logged_in });
+    const activityLog = await ActivityLog.findAll({
+      where: {public_allowed: 1},
+      attributes: ['date'],
+      include: [{ model: User, attributes: ['display_name']},
+                { model: Activity, attributes: ['name']},
+                { model: Comment}],
+      limit: 15
+    })
+    const cleanActivities = activityLog.map((log) => log.get({ plain: true}));
+    res.render('homepage', { activities: cleanActivities , logged_in: req.session.logged_in });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

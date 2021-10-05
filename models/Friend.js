@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ActivityLog extends Model {}
+class Friend extends Model {}
 
-ActivityLog.init(
+Friend.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,25 +11,11 @@ ActivityLog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    daily_log_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false, 
-      references: {
-        model: 'dailyLog',
-        key: 'id',
-        unique: false
-      }
-    },
-    activity_id: {
+    friend_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'activity',
+        model: 'user',
         key: 'id',
         unique: false
       }
@@ -38,15 +24,15 @@ ActivityLog.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        moedl: 'user',
-        key: 'id', 
+        model: 'user',
+        key: 'id',
         unique: false
       }
     },
-    public_allowed: {
-      type: DataTypes.BOOLEAN,
+    date_added: {
+      type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: 1
+      defaultValue: DataTypes.NOW
     }
   },
   {
@@ -54,8 +40,8 @@ ActivityLog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'activityLog',
+    modelName: 'friend',
   }
 );
 
-module.exports = ActivityLog;
+module.exports = Friend;
