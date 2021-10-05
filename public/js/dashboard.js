@@ -2,6 +2,24 @@
 //fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points 
 
 // const { response } = require("express");
+var randomQuoteDiv = document.getElementById('quoteDiv');
+var refreshButton = document.getElementById('refresh')
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data[0]);
+    // let quote = JSON.stringify(data);
+    let randomQuote = Math.floor(Math.random()*data.length);
+    let randomText = data[randomQuote].text;
+    let randomAuthor = data[randomQuote].author;
+    console.log(randomText);
+    console.log(randomAuthor);
+   randomQuoteDiv.innerHTML = randomText + "-" + randomAuthor;
+    
+  });
+
 
   const innerNumbers = document.querySelectorAll('#number');
 
