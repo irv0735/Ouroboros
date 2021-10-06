@@ -105,6 +105,10 @@ h2 {
   margin-right: 15px;
 }
 
+.text-input {
+  font-family: sans-serif;
+}
+
 .btn-logout {
   font-family: 'gallery_modernregular';
   color: var(--dark);
