@@ -1,14 +1,9 @@
 @font-face {
   font-family: 'gallery_modernregular';
-  src:
-   /* url('gallerymodern-webfont.woff2') format('woff2'),
-    url('gallerymodern-webfont.woff') format('woff'), */ url('gallerymodern-webfont.ttf')
-    format('truetype');
+  src: url('gallerymodern-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=PT+Sans&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
 
@@ -44,15 +39,9 @@ body {
 
 main {
   display: block;
-  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
-
-/* main {
-  flex-wrap: wrap;
-  flex-grow: 1;
-} */
 
 .z0 {
   z-index: -1;
@@ -79,7 +68,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   padding: 40px;
-  /* height: 200px; */
   color: var(--light);
   margin-bottom: 15px;
   justify-content: center;
@@ -131,10 +119,6 @@ img {
   justify-content: center;
   text-align: center;
   margin-top: 3vh;
-  padding: 3vw;
-  /* border-radius: 50px;
-  border-radius: 50px;
-  border-radius: 44px; */
   border-radius: 44px;
   background: linear-gradient(145deg, #cecee6, #f5ffff);
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
@@ -158,7 +142,6 @@ img {
 
 .container {
   display: flex;
-  /* flex-flow: column wrap; */
   align-items: center;
 }
 
@@ -176,7 +159,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   margin: 3vh;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -194,14 +176,9 @@ img {
   max-width: 200px;
 }
 
-.activity-log {
-  /* width: 500px; */
+.activity-log,
+.public-form {
   display: flex;
-  /* float: right; */
-  /* justify-content: flex-end; */
-  /* align-items: center; */
-  /* margin-right: 5vw; */
-  /* justify-content: space-around; */
 }
 
 .daily-log-form label {
@@ -209,15 +186,17 @@ img {
   font-size: 3vh;
 }
 
-.activity-input {
-  /* font-size: large; */
+.activity-input,
+#public-display {
   height: 3vh;
   align-self: center;
   margin: 0;
-  /* display: inline; */
-  /* flex-direction: column; */
-  /* position: fixed; */
-  /* right: 0; */
+}
+
+.public-form {
+  border-top: 3px solid #181757;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .create-side {
@@ -226,7 +205,6 @@ img {
 }
 
 .logs {
-  /* align-items: center; */
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -242,7 +220,6 @@ th {
 }
 
 .history-content {
-  /* width: 30vw; */
   font-family: 'Mukta', sans-serif;
   display: block;
   border: 2px solid var(--dark);
