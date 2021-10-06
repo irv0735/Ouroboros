@@ -194,7 +194,8 @@ img {
   max-width: 200px;
 }
 
-.activity-log {
+.activity-log,
+.public-form {
   /* width: 500px; */
   display: flex;
   /* float: right; */
@@ -209,7 +210,8 @@ img {
   font-size: 3vh;
 }
 
-.activity-input {
+.activity-input,
+#public-display {
   /* font-size: large; */
   height: 3vh;
   align-self: center;
@@ -219,6 +221,18 @@ img {
   /* position: fixed; */
   /* right: 0; */
 }
+
+.public-form {
+  border-top: 3px solid #181757;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* #public-display {
+  height: 3vh;
+  align-self: center;
+  margin: 0;
+} */
 
 .create-side {
   padding-top: 30px;
