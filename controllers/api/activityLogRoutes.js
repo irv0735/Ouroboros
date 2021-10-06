@@ -9,7 +9,8 @@ router.post('/', async (req, res) => {
       user_id: req.session.user_id,
       date: req.body.entryDate,
       activity_id: element,
-      daily_log_id: req.body.daily_log_id 
+      daily_log_id: req.body.daily_log_id,
+      public_allowed: req.body.publicFeed 
     });
   });
   try { 

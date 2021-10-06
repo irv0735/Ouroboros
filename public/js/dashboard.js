@@ -9,13 +9,10 @@ fetch('https://type.fit/api/quotes')
     return response.json();
   })
   .then(function (data) {
-    console.log(data[0]);
     // let quote = JSON.stringify(data);
     let randomQuote = Math.floor(Math.random() * data.length);
     let randomText = data[randomQuote].text;
     let randomAuthor = data[randomQuote].author;
-    console.log(randomText);
-    console.log(randomAuthor);
     randomQuoteDiv.innerHTML = `"${randomText}" - ${randomAuthor}`;
   });
 
