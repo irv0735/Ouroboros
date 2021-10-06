@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
     const activityLog = await ActivityLog.findAll({
       where: {public_allowed: 1},
       attributes: ['date'],
+      order: [['date', 'DESC']],
       include: [{ model: User, attributes: ['display_name']},
                 { model: Activity, attributes: ['name']},
                 { model: Comment}],
