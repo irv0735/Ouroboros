@@ -20,12 +20,12 @@ anime
     delay: 1000,
   });
 
-anime({
-  targets: '.dashboard-card',
-  scale: 1,
-  rotate: '1turn',
-  duration: 6000,
-});
+// anime({
+//   targets: '.dashboard-card',
+//   scale: 1,
+//   rotate: '1turn',
+//   duration: 6000,
+// });
 
 anime({
   targets: '.log-card',
