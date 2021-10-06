@@ -22,17 +22,6 @@ Live URL: https://ouroboros-ml-jf-ni.herokuapp.com/
 
 Node Packages:
 
--
--
--
--
--
--
-- handlebars
--
--
--
-
 | Node Packages: |                           |                 |
 | -------------- | ------------------------- | --------------- |
 | bcrypt         | connect-session-sequelize | dotenv          |
