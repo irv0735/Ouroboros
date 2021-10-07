@@ -38,9 +38,12 @@ body {
 #likeBtn {
   
   background-color:transparent;
-  border-radius: 10px;
+  border: none;
+  
 
 }
+
+
 .snake {
   opacity: 50%;
 }
