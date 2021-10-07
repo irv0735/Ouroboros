@@ -13,7 +13,7 @@ const app = express();
 const hbs = exphbs.create();
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRETSESS,
   cookie: {},
   resave: false,
   saveUninitialized: true,
