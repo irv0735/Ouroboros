@@ -35,7 +35,8 @@
         <td>{{activity.date}}</td>
         <td>{{activity.user.display_name}}</td>
         <td>{{activity.activity.name}}</td>
-        <td class='no-border'><button class="btn ">Give Props!</button></td>
+        <td class='no-border'> <button><img class= "notLiked" onclick= "changeImage(this)" src="/images/notliked.png" alt=""></button>
+        <button><img class= "liked" onclick= "changeImage(this)" src="/images/liked.png" alt=""></button></td>
       </tr>
     {{/each}}
     </table>
@@ -43,6 +44,6 @@
 </div>
 
 <div class="snake z0"> {{>snakebg}} </div>
-
+<script src= "/js/homepage.js"></script>
 
 
