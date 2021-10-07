@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 // function executes when the daily-entry form is submitted -> api call to save the record in the database
 const dailyLogFormHandler = async (event) => {
   event.preventDefault();
