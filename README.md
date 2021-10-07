@@ -2,6 +2,8 @@
 
 <div id="top"></div>
 
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Descritpion
 
 Wellness application focused on improving an individual's mental health. The user has several activities to choose from that geared towards reenergizing, refreshing, and boosting mental state. The user will received a badge once they have successfully logged 10 sessions of that particular activity.
