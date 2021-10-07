@@ -1,6 +1,9 @@
 # Ouroboros
 
 <div id="top"></div>
+
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Descritpion
 
 Wellness application focused on improving an individual's mental health. The user has several activities to choose from that geared towards reenergizing, refreshing, and boosting mental state. The user will received a badge once they have successfully logged 10 sessions of that particular activity.
@@ -75,16 +78,18 @@ add in usage
 ## Breakdown of Tasks
 
 ```
-Jillian - Project Manager, Presentation Purveyor, Node/Express Assist, CSS Assist
-Nate - Github Guru, Data Flow Doctor, API Researcher, Node/Express Master
-Micheal - HTML/View Export, CSS Expert, Node/Express Assist
-We all helped out with the different tasks to make the application look AMAZING!
+- Jillian - Project Manager, Presentation Purveyor, Node/Express Assist, CSS Assist
+- Nate - Github Guru, Data Flow Doctor, API Researcher, Node/Express Master
+- Micheal - HTML/View Export, CSS Expert, Node/Express Assist
+- We all helped out with the different tasks to make the application look AMAZING!
 ```
 
 ## Future Development
 
 ```
-what we want to do in the future
+- Allow user to interact with other users with an "Add Friend" option
+- Add profile pictures to accounts
+- Allow users to comment or give props to other users when they complete an acitvity.
 ```
 
 ## Tech Used

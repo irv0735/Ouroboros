@@ -119,6 +119,7 @@ img {
   justify-content: center;
   text-align: center;
   margin-top: 3vh;
+  padding: 2vw;
   border-radius: 44px;
   background: linear-gradient(145deg, #cecee6, #f5ffff);
   box-shadow: 28px 28px 56px #ccdae3, -28px -28px 56px #feffff;
