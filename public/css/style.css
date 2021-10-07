@@ -33,6 +33,14 @@ body {
   background-size: cover;
 }
 
+
+
+#likeBtn {
+  
+  background-color:transparent;
+  border-radius: 10px;
+
+}
 .snake {
   opacity: 50%;
 }
