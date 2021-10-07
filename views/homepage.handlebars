@@ -24,6 +24,7 @@
 
 <script src="/js/login.js"></script>
 {{/unless}}
+{{#if logged_in}}
   <div class="activity-feed z2" >
     <table>
       <th>Date</th>
@@ -40,6 +41,7 @@
     {{/each}}
     </table>
   </div>
+  {{/if}}
 </div>
 
 <div class="snake z0"> {{>snakebg}} </div>
