@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // function executes when the daily-entry form is submitted -> api call to save the record in the database
 const dailyLogFormHandler = async (event) => {
   event.preventDefault();
@@ -15,7 +17,7 @@ const dailyLogFormHandler = async (event) => {
       fetch(feelingAPI, {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "5b7389e2b1msha3f2a9a2397902ep15e923jsnca14c8f04f77",
+        "x-rapidapi-key": '5b7389e2b1msha3f2a9a2397902ep15e923jsnca14c8f04f77',
         "x-rapidapi-host": "twinword-emotion-analysis-v1.p.rapidapi.com"
       }
       })
