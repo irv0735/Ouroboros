@@ -12,8 +12,8 @@ Live URL: https://ouroboros-ml-jf-ni.herokuapp.com/
 
 ### Test Account Login Credentials
 
-- Email:
-- Password:
+- Email: testuser@fake-email.com
+- Password: test1234
 
 ## Table of Contents
 
