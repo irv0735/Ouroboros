@@ -239,11 +239,6 @@ img {
   margin: 4vw;
 }
 
-th {
-  font-family: 'gallery_modernregular';
-  color: var(--primary);
-}
-
 .history-content {
   font-family: 'Mukta', sans-serif;
   display: block;
@@ -255,7 +250,10 @@ th {
 }
 
 th {
+  font-family: 'gallery_modernregular';
+  color: var(--primary);
   font-size: 3vh;
+  padding: 7px;
 }
 
 td {
