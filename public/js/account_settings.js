@@ -5,7 +5,7 @@ const settingsFormHandler = async (event) => {
   const goals = document.querySelector('#goals-settings').value.trim();
   const file = document.querySelector('#imageInput').files[0]
   const previousData = document.querySelector('.settings-form').dataset.existing;
-  
+
   if (previousData === "false") {
     if (bio && goals) {
       const responseObject = new FormData();
@@ -19,7 +19,7 @@ const settingsFormHandler = async (event) => {
           body: responseObject
         });
       if (response.ok) {
-        // document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to save-settings.');
       }
@@ -39,7 +39,7 @@ const settingsFormHandler = async (event) => {
           body: responseObject
         });
       if (response.ok) {
-        // document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to save settings.');
       }
@@ -47,9 +47,6 @@ const settingsFormHandler = async (event) => {
     alert("You must enter both a bio and goal to continue!");
     }
   }
-
-
-
 };
 
 const deleteAccountHandler = async (event) => {
@@ -64,10 +61,6 @@ const deleteAccountHandler = async (event) => {
     alert('Failed to delete account. ');
   }
 }
-
-
-
-
 
 document.querySelector('.settings-form').addEventListener('submit', settingsFormHandler);
 document.querySelector('#delete-account').addEventListener('click', deleteAccountHandler);
