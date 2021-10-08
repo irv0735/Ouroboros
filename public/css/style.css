@@ -177,7 +177,7 @@ img {
 .progress {
   display: flex;
   flex-wrap: wrap;
-  margin: 2vw;
+  margin: 1vw;
   justify-content: center;
   align-items: center;
 }
