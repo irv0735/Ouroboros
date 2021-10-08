@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Router } = require('express');
 const { DailyLog } = require('../../models');
 
 // Create a new daily-log entry for the active user
@@ -43,6 +44,7 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 })
+
 
 
 module.exports = router;

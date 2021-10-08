@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 // function executes when the daily-entry form is submitted -> api call to save the record in the database
 const dailyLogFormHandler = async (event) => {
   event.preventDefault();
@@ -9,34 +11,11 @@ const dailyLogFormHandler = async (event) => {
   let emotion = "undetected";
 
   if(entryDate && journal !== null) {
-    let newFeelingInput = journal.replaceAll(" ", "%20");
-    let feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
-    const getEmotion = new Promise((resolve, reject) => {
-      fetch(feelingAPI, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": '5b7389e2b1msha3f2a9a2397902ep15e923jsnca14c8f04f77',
-        "x-rapidapi-host": "twinword-emotion-analysis-v1.p.rapidapi.com"
-      }
-      })
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(data) {
-        if (data.emotions_detected[0]) {
-          emotion = data.emotions_detected[0];
-        }
-        resolve();
-        return;
-      })
-      .catch(err => {
-        console.error(err);
-      });
-      
-    }).then( async () => {
+
+    try {
       const response = await fetch('/api/daily-log', {
         method: 'POST',
-        body: JSON.stringify({ entryDate, journal, emotion }),
+        body: JSON.stringify({ entryDate, journal }),
         headers: { 'Content-Type': 'application/json' },
       })
       .then(response => response.json())
@@ -53,11 +32,14 @@ const dailyLogFormHandler = async (event) => {
         };
         document.location.replace('/daily-log')
       });
-    });
-  } else {
-    alert('Please enter something into the journal about the day that was memorable.')
-    return
-  }
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+      
+    }
+      
+
+}
 };
 
 document.querySelector('.daily-log-form').addEventListener('submit', dailyLogFormHandler);
