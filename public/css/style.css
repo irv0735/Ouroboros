@@ -39,18 +39,24 @@ body {
 }
 
 
-.profile-pic{
-  width: 50px;
-  height: auto;
-  border-radius: 20px;
-  font-size: 25px;
-  text-align: center;
-  margin-right: 10px;
-  border-radius:50%;
-  display:inline-block;
-  padding:10px;
 
+
+.profile-pic {
+ 
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
 }
+
+.profpic-img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
 
 .snake {
   opacity: 55%;
