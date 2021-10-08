@@ -2,13 +2,13 @@ const { UserSettings } = require('../models');
 
 const userSettingsData = [
   {
-    bio: 'Fumbling along with a lack of direction',
-    goals: 'Beat depression',
+    bio: 'tall dude',
+    goals: 'Learn to debug my mistakes more quickly',
     user_id: 3
   },
   {
-    bio: 'What am I?',
-    goals: 'Complete the Bootcamp!',
+    bio: 'professional badge developer',
+    goals: 'keep the loose cannons in the group on track',
     user_id: 2
   }
 ];
