@@ -5,7 +5,7 @@ const settingsFormHandler = async (event) => {
   const goals = document.querySelector('#goals-settings').value.trim();
   const file = document.querySelector('#imageInput').files[0]
   const previousData = document.querySelector('.settings-form').dataset.existing;
-  
+
   if (previousData === "false") {
     if (bio && goals) {
       const responseObject = new FormData();

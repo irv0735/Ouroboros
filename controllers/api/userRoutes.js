@@ -86,8 +86,8 @@ router.post('/settings', upload.single("file"), async (req, res) => {
            fileLink: s3FileURL + image.originalname,
            s3_key: params.Key
         };
-        settings = { ...settings, profile_pic: newFileUploaded.fileLink };
-        const newSettings = await UserSettings.create(settings, {where: {user_id: userId}})
+        settings = { ...settings, profile_pic: newFileUploaded.fileLink, user_id: userId };
+        const newSettings = await UserSettings.create(settings);
         res.send(newSettings);
       }
     } catch (err) {
