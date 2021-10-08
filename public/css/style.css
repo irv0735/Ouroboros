@@ -177,9 +177,13 @@ img {
   align-items: center;
 }
 
+.skill {
+  margin: 2vw;
+}
+
 .activity-img {
   margin: 2vw;
-  width: 20vw;
+  width: 30vw;
   max-width: 200px;
 }
 
@@ -263,4 +267,11 @@ td {
 
 .no-border {
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    margin-top: 10vh;
+    font-size: 15vw;
+  }
 }
