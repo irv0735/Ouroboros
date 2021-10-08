@@ -116,6 +116,13 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+//not using this or intend to 
+//incorprating it all in /settings 
+//combining all into the one response object 
+//rO contains bio goals file and gets sent to /settings
+//do everything with those three items within the /settings 
+
 router.post('/photos', upload.single('file'), async (req, res) => {
   let info = req.body;
 
