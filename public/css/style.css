@@ -245,6 +245,17 @@ td {
   font-size: 2.1vh;
 }
 
+.activity-feed {
+  display: flex;
+  margin-top: 4vh;
+  align-content: center;
+}
+
+.activity-feed table {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .activity-table-data ul {
   margin: 0;
   float: left;
