@@ -36,7 +36,7 @@
         <td>{{activity.date}}</td>
         <td>{{activity.user.display_name}}</td>
         <td>{{activity.activity.name}}</td>
-        <td class='no-border'> <button><img id="{{activity.id}}" data-like="{{activity.liked}}" class="likeBtn" onclick="changeImage(event)" src="" alt="like button"></button></td>
+        <td class='no-border'> <button><img id="{{activity.id}}" data-like="{{activity.liked}}" class="likeBtn" onclick="changeImage(event)" src="/images/notliked.png" alt="like button"></button></td>
       </tr>
     {{/each}}
     </table>
