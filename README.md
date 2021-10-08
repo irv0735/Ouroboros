@@ -50,9 +50,7 @@ Live URL: https://ouroboros-ml-jf-ni.herokuapp.com/
 
 ## Visual Example
 
-```
-maybe add in a gif of us running through site
-```
+![walkthrough gif of our project](./assets/walkthrough.gif)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -94,9 +92,9 @@ An estimated 26% of Americans ages 18 and older -- about 1 in 4 adults -- suffer
 
 ## Future Development
 
-- Allow user to interact with other users with an "Add Friend" option
-- Add profile pictures to accounts
+- Allow user to interact with other users with an "Add Friend" option.
 - Allow users to comment or give props to other users when they complete an acitvity.
+- Have therapy activities or suggestions avialable to users.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -119,6 +117,7 @@ An estimated 26% of Americans ages 18 and older -- about 1 in 4 adults -- suffer
 
 - Emotions API: https://www.twinword.com/
 - Quote API: https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373
-- AWS:
+- AWS: https://aws.amazon.com/?nc2=h_lg
+- Amazon S3: https://aws.amazon.com/s3/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
