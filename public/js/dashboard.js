@@ -3,7 +3,7 @@
 
 // const { response } = require("express");
 var randomQuoteDiv = document.getElementById('quoteDiv');
-var refreshButton = document.getElementById('refresh');
+
 fetch('https://type.fit/api/quotes')
   .then(function (response) {
     return response.json();
