@@ -5,20 +5,19 @@ const settingsFormHandler = async (event) => {
   const goals = document.querySelector('#goals-settings').value.trim();
   const file = document.querySelector('#imageInput').files[0]
   const previousData = document.querySelector('.settings-form').dataset.existing;
-  console.log(file);
+  
   if (previousData === "false") {
     if (bio && goals) {
-      const responseObject = { bio, goals,}
-      if (file !== undefined) {
-        responseObject.file = file;
-        
-      }
-      const response = await fetch('/api/users/settings', {
-        method: 'POST',
-        body: JSON.stringify(responseObject),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
+      const responseObject = new FormData();
+        responseObject.append("bio", bio)
+        responseObject.append("goals", goals)
+        if (file !== undefined) {
+          responseObject.append("file", file)
+        }
+        const response = await fetch('/api/users/settings', {
+          method: 'POST',
+          body: responseObject
+        });
       if (response.ok) {
         // document.location.replace('/dashboard');
       } else {
@@ -30,20 +29,15 @@ const settingsFormHandler = async (event) => {
   } else {
     if (bio && goals) {
       const responseObject = new FormData();
-       responseObject.append("bio", bio)
-       responseObject.append("goals", goals)
-      
-
-      if (file !== undefined) {
-        responseObject.append("file", file)
-        
-      }
-      const response = await fetch('/api/users/settings', {
-        method: 'PUT',
-        body: responseObject
-        
-
-      });
+        responseObject.append("bio", bio)
+        responseObject.append("goals", goals)
+        if (file !== undefined) {
+          responseObject.append("file", file)
+        }
+        const response = await fetch('/api/users/settings', {
+          method: 'PUT',
+          body: responseObject
+        });
       if (response.ok) {
         // document.location.replace('/dashboard');
       } else {
