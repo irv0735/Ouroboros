@@ -10,6 +10,11 @@ Wellness application focused on improving an individual's mental health. The use
 
 Live URL: https://ouroboros-ml-jf-ni.herokuapp.com/
 
+### Test Account Login Credentials
+
+- Email: testuser@fake-email.com
+- Password: test1234
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -53,11 +58,9 @@ maybe add in a gif of us running through site
 
 ## Our Inspiration
 
-```
 Is working 40 hours a week and going to school the same amount of time truly feasible or healthy? Is the glorification of an 80 hour work week in our society the cause of these problems?
 
 Approximately 9.5% of American adults ages 18 and over, will suffer from a depressive illness (major depression, bipolar disorder, or dysthymia) each year.
-```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -75,6 +78,8 @@ add in usage
 - [Nate Irvin](https://github.com/irv0735)
 - [Micheal Limones](https://github.com/ZestyLimones)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Breakdown of Tasks
 
 ```
@@ -84,6 +89,8 @@ add in usage
 - We all helped out with the different tasks to make the application look AMAZING!
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Future Development
 
 ```
@@ -92,20 +99,24 @@ add in usage
 - Allow users to comment or give props to other users when they complete an acitvity.
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Tech Used
 
 <div style='margin: 1em 0;'>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="4%" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="4%" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original-wordmark.svg" alt="handlebars" width="4%"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original-wordmark.svg" alt="handlebars" width="4%" style="background-color: white !important"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJs" width="4%" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="express" width="4%" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="express" width="4%" style="background-color: white !important"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="4%" />
 </div>
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Resources
 
-```sh
 - Emotions API: https://www.twinword.com/
 - Quote API: https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373
-```
+
+<p align="right">(<a href="#top">back to top</a>)</p>

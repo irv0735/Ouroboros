@@ -33,16 +33,10 @@ body {
   background-size: cover;
 }
 
-
-
 #likeBtn {
-  
-  background-color:transparent;
+  background-color: transparent;
   border: none;
-  
-
 }
-
 
 .snake {
   opacity: 55%;
@@ -137,8 +131,8 @@ img {
 }
 
 .card {
-  padding: 2vw;
-  margin: 2vh;
+  padding: 1vw;
+  margin: 1vh;
   border-radius: 44px;
   background: linear-gradient(145deg, #f1f1ff, #9e97b8);
   box-shadow: 28px 28px 56px #f5ffff, -28px -28px 56px #feffff;
@@ -190,14 +184,19 @@ img {
 .progress {
   display: flex;
   flex-wrap: wrap;
-  margin: 1vw;
+  /* margin: 2vw; */
+  height: 75%;
   justify-content: center;
   align-items: center;
 }
 
+.skill {
+  margin: 2vw;
+}
+
 .activity-img {
   margin: 2vw;
-  width: 20vw;
+  width: 30vw;
   max-width: 200px;
 }
 
@@ -251,6 +250,7 @@ th {
   border-radius: 20px;
   padding: 10px;
   max-width: 600px;
+  margin-bottom: 2vh;
 }
 
 th {
@@ -263,6 +263,17 @@ td {
   font-size: 2.1vh;
 }
 
+.activity-feed {
+  display: flex;
+  margin-top: 4vh;
+  align-content: center;
+}
+
+.activity-feed table {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .activity-table-data ul {
   margin: 0;
   float: left;
@@ -270,4 +281,11 @@ td {
 
 .no-border {
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    margin-top: 10vh;
+    font-size: 15vw;
+  }
 }
