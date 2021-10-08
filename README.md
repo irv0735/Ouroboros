@@ -50,7 +50,7 @@ Live URL: https://ouroboros-ml-jf-ni.herokuapp.com/
 
 ## Visual Example
 
-![walkthrough gif of our project](./assets/walkthrough.gif)
+<img src="https://github.com/irv0735/Ouroboros/blob/main/assets/walkthrough.gif" width="500px" />
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
