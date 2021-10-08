@@ -67,10 +67,10 @@ router.post('/settings', async (req, res) => {
 
 // Update the account settings for the active user
 router.put('/settings', upload.single("file"), (req, res) => {
-  console.log(req.file);
-  // UserSettings.update(req.body, {where: {user_id: req.session.user_id}} )
-  // .then((updatedSettings) => res.json(updatedSettings))
-  // .catch((err) => res.status(500).json(err))
+
+  UserSettings.update(req.body, {where: {user_id: req.session.user_id}} )
+  .then((updatedSettings) => res.json(updatedSettings))
+  .catch((err) => res.status(500).json(err))
 })
 
 // Login route to validate email/password and initiate the session
