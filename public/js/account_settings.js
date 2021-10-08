@@ -19,7 +19,7 @@ const settingsFormHandler = async (event) => {
           body: responseObject
         });
       if (response.ok) {
-        // document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to save-settings.');
       }
@@ -39,7 +39,7 @@ const settingsFormHandler = async (event) => {
           body: responseObject
         });
       if (response.ok) {
-        // document.location.replace('/dashboard');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to save settings.');
       }
