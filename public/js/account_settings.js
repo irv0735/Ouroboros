@@ -47,9 +47,6 @@ const settingsFormHandler = async (event) => {
     alert("You must enter both a bio and goal to continue!");
     }
   }
-
-
-
 };
 
 const deleteAccountHandler = async (event) => {
@@ -64,10 +61,6 @@ const deleteAccountHandler = async (event) => {
     alert('Failed to delete account. ');
   }
 }
-
-
-
-
 
 document.querySelector('.settings-form').addEventListener('submit', settingsFormHandler);
 document.querySelector('#delete-account').addEventListener('click', deleteAccountHandler);

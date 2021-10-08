@@ -2,9 +2,10 @@ const router = require('express').Router();
 const { User, UserSettings } = require('../../models');
 const multer = require('multer');
 const storage = multer.memoryStorage();
+const Jimp = require('jimp');
 const upload = multer({ storage: storage });
 const AWS = require('aws-sdk');
-const Jimp = require('jimp');
+
 
 
 // Create a new user in the database
@@ -65,11 +66,57 @@ router.post('/settings', upload.single("file"), async (req, res) => {
 })
 
 // Update the account settings for the active user
-router.put('/settings', upload.single("file"), (req, res) => {
+router.put('/settings', upload.single("file"), async (req, res) => {
+  const image = req.file;
+  console.log(image);
+  const s3FileURL = process.env.AWS_UPLOADED_FILE_URL_LINK;
+  const file = await Jimp.read(Buffer.from(image.buffer, 'base64'))
+      .then(async image => {
+        // const background = await Jimp.read('https://url/background.png');
+        // const font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
 
-  UserSettings.update(req.body, {where: {user_id: req.session.user_id}} )
-  .then((updatedSettings) => res.json(updatedSettings))
-  .catch((err) => res.status(500).json(err))
+        image.resize(Jimp.AUTO, 900);
+        // image.composite(background, 1000, 700);
+        // image.print(font, 1000, 700, 'Logo');
+        return image.getBufferAsync(Jimp.AUTO);
+      })
+      .catch(err => {
+        res.status(500).json({ msg: 'Server Error', error: err });
+      });
+  let s3bucket = new AWS.S3({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION,
+    signatureVersion: 'v4'
+  });
+  const params = {
+    Bucket: process.env.AWS_BUCKET_NAME,
+    Key: image.originalname,
+    Body: file,
+    ContentType: image.mimetype,
+    ACL: 'public-read'
+  };
+  s3bucket.upload(params, async (err, data) => {
+    try {
+      if (err) {
+        res.status(500).json({ error: true, Message: err });
+      } else {
+         const newFileUploaded = {
+           fileLink: s3FileURL + image.originalname,
+           s3_key: params.Key
+          };
+          console.log(data);
+          console.log(newFileUploaded);
+          res.json({ msg: 'Uploaded' + newFileUploaded});
+      }
+    } catch (err) {
+     res.status(500).json({ msg: 'Server Error', error: err });
+    }
+  });
+
+  // UserSettings.update(req.body, {where: {user_id: req.session.user_id}} )
+  // .then((updatedSettings) => res.json(updatedSettings))
+  // .catch((err) => res.status(500).json(err))
 })
 
 // Login route to validate email/password and initiate the session
