@@ -47,6 +47,11 @@ ActivityLog.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: 1
+    }, 
+    liked: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: 0
     }
   },
   {

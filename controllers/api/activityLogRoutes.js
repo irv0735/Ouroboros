@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { ActivityLog } = require('../../models');
 
+// api/activity-log/
+
 // Create a new activity-log entry for the active user
 router.post('/', async (req, res) => {
   const newActivities = [];
@@ -33,6 +35,13 @@ router.get('/:limit', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+})
+
+router.put('/change-like/:id', async (req, res) => {
+  ActivityLog.update(req.body, {
+      where: {id: req.params.id}})
+    .then((updatedActivityLog) => res.json(updatedActivityLog))
+    .catch((err) => res.status(500).json(err)) 
 })
 
 // Unused 
