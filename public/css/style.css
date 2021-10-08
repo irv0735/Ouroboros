@@ -38,6 +38,20 @@ body {
   border: none;
 }
 
+
+.profile-pic{
+  width: 50px;
+  height: auto;
+  border-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius:50%;
+  display:inline-block;
+  padding:10px;
+
+}
+
 .snake {
   opacity: 55%;
 }
