@@ -50,9 +50,8 @@ router.delete('/', async (req, res) => {
 });
 
 // Create the account settings for the active user
-router.post('/settings', async (req, res) => {
+router.post('/settings', upload.single("file"), async (req, res) => {
   try {
-    console.log(req.body.file);
     const dbUserSettings = await UserSettings.create({
       bio: req.body.bio, 
       goals: req.body.goals,
