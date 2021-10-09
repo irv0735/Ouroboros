@@ -42,7 +42,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 { model: UserSettings, attributes: ['bio', 'goals', 'profile_pic'] }]
     })
     const userClean = userData.get({ plain: true });
-    console.log(userClean)
     if (!userClean.user_activities[0]) {
       res.render('dashboard', { ...userClean, logged_in: true });
     } else {
