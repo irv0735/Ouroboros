@@ -27,12 +27,8 @@ const getPercentage = new Promise((resolve, reject) => {
     if (percentageArray[i] < 100) {
       percentage = percentageArray[i];
     } else {percentage = 100;}
-  circleArray.forEach((element, i) => {
-    element.classList.add(`anim-${percentage}`);
-  });
-  imgArray.forEach((element, i) => {
-    element.setAttribute("style",`opacity: ${percentage}%`)
-  });    
+  circleArray[i].classList.add(`anim-${percentage}`);
+  imgArray[i].setAttribute("style",`opacity: ${percentage}%`)
   setInterval(() => {
     if (counter == percentage) {
       clearInterval();
