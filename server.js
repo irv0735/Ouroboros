@@ -34,13 +34,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-AWS.config.getCredentials(function(err) {
-  if (err) console.log(err.stack);
-  // credentials not loaded
-  else {
-    console.log("Successful S3 credentials"); 
-  }
-});
+// AWS.config.getCredentials(function(err) {
+//   if (err) console.log(err.stack);
+//   // credentials not loaded
+//   else {
+//     console.log("Successful S3 credentials"); 
+//   }
+// });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on PORT:${PORT}`));
