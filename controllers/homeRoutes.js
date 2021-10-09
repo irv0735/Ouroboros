@@ -55,8 +55,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
           });
           const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
           element.userPercent = userPercentage;
-          resolve();
         });
+        console.log(userClean);
+        resolve();
       }).then(() => {
       res.render('dashboard', { ...userClean, logged_in: true })});
     }
