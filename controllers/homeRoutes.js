@@ -42,6 +42,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 { model: UserSettings, attributes: ['bio', 'goals', 'profile_pic'] }]
     })
     const userClean = userData.get({ plain: true });
+    console.log(userClean)
     if (!userClean.user_activities[0]) {
       res.render('dashboard', { ...userClean, logged_in: true });
     } else {
@@ -55,9 +56,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
           });
           const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
           element.userPercent = userPercentage;
+          resolve();
         });
-        console.log(userClean);
-        resolve();
       }).then(() => {
       res.render('dashboard', { ...userClean, logged_in: true })});
     }
