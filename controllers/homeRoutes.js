@@ -38,28 +38,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Activity, through: ActivityLog, as: 'user_activities', 
-                  attributes: ['id', 'name', 'points', 'badge_requires', 'badge_name' ]},
+                  attributes: ['id', 'name', 'badge_name' ]},
                 { model: UserSettings, attributes: ['bio', 'goals', 'profile_pic'] }]
     })
     const userClean = userData.get({ plain: true });
-    if (!userClean.user_activities[0]) {
-      res.render('dashboard', { ...userClean, logged_in: true });
-    } else {
-      const getPercentage = new Promise((resolve, reject) => {
-        userClean.user_activities.forEach( async (element) => {
-          const activityCount = await ActivityLog.count({ 
-            where: { 
-              activity_id: element.id, 
-              user_id: req.session.user_id 
-              }
-          });
-          const userPercentage = (((activityCount*element.points)/(element.badge_requires))*100);
-          element.userPercent = userPercentage;
-          resolve();
-        });
-      }).then(() => {
-      res.render('dashboard', { ...userClean, logged_in: true })});
-    }
+    res.render('dashboard', { ...userClean, logged_in: true })
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

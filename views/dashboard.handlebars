@@ -18,15 +18,12 @@
 
 <div id= "suggestion-content" class="suggestion-content">
 </div>
-<!--Temp variable capture
-{{activity.name}}: - {{activity.userPercent}} %
--->
 
 <div class="dasboard-content">
   {{#each user_activities as |activity|}}
   <div class="card dashboard-card">
-    <p class="activity-name">{{activity.name}}</p>
-      <div class="progress" data-percent="{{activity.userPercent}}">
+    <p class="activity-name" data-activityid={{activity.id}}>{{activity.name}}</p>
+      <div class="progress">
         <div class="skill">
         <div class="outer">
           <div class="inner">
@@ -43,12 +40,12 @@
                     <stop offset="100%" stop-color="#5e967b" />
                   </linearGradient>
               </defs>
-              <circle class="anim-{{activity.userPercent}}" cx="80" cy="80" r="70" stroke-linecap="round" />
+              <circle cx="80" cy="80" r="70" stroke-linecap="round" />
       </svg> 
 
       </div>
  
-          <div ><img class="activity-img" src="/images/{{activity.badge_name}}.png" alt="{{activity.name}} badge image" style="opacity: {{activity.userPercent}}%;"></div>
+          <div ><img class="activity-img" src="/images/{{activity.badge_name}}.png" alt="{{activity.name}} badge image"></div>
       </div>
   </div>
   {{/each}}

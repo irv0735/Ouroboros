@@ -44,20 +44,21 @@ router.put('/change-like/:id', async (req, res) => {
     .catch((err) => res.status(500).json(err)) 
 })
 
-// Unused 
+
 // Return the total count for the selected activity for the current user
-// router.get('/activity-count/:id', async (req, res) => {
-//   try {
-//     const activityCount = await ActivityLog.count({ 
-//       where: { 
-//         activity_id: req.params.id, 
-//         user_id: req.session.user_id 
-//         }
-//     });
-//     res.status(200).json(activityCount)
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// })
+router.get('/activity-count/:id', async (req, res) => {
+  try {
+    const activityCount = await ActivityLog.count({ 
+      distinct: 'id',
+      where: { 
+        activity_id: req.params.id, 
+        user_id: req.session.user_id 
+        }
+    });
+    res.status(200).json(activityCount)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;

@@ -1,8 +1,50 @@
-// const suggestionDiv = document.getElementById('suggestion-content');
-//fetch ('/activity-log/activity-count/:id') multiple count by 10 and have their total points
+let activityArray = document.querySelectorAll('.activity-name')
+const innerNumbersArray = document.querySelectorAll('#number');
+const circleArray = document.querySelectorAll('circle');
+const imgArray = document.querySelectorAll('.activity-img');
+let activityIdArray = [];
+activityArray.forEach(element => {
+  activityIdArray.push(element.dataset.activityid);
+})
 
-var randomQuoteDiv = document.getElementById('quoteDiv');
+let percentageArray = [];
+const getPercentage = new Promise((resolve, reject) => {
+  activityIdArray.forEach( async (element, i) => {
+    const response = await fetch(`/api/activity-log/activity-count/${element}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then(response => response.json())
+    .then(data => {
+      percentageArray.push(data*10)
+      if (i === activityIdArray.length-1) resolve();
+    });
+  });
+}).then(() => {
+  innerNumbersArray.forEach((element, i) => {
+    let counter = 0;
+    let percentage = 0;
+    if (percentageArray[i] < 100) {
+      percentage = percentageArray[i];
+    } else {percentage = 100;}
+  circleArray.forEach((element, i) => {
+    element.classList.add(`anim-${percentage}`);
+  });
+  imgArray.forEach((element, i) => {
+    element.setAttribute("style",`opacity: ${percentage}%`)
+  });    
+  setInterval(() => {
+    if (counter == percentage) {
+      clearInterval();
+    } else {
+      counter += 1;
+      element.innerHTML = counter + '%';
+    }
+  }, 20);
+  });
+})
 
+const randomQuoteDiv = document.getElementById('quoteDiv');
 fetch('https://type.fit/api/quotes')
   .then(function (response) {
     return response.json();
@@ -14,18 +56,4 @@ fetch('https://type.fit/api/quotes')
     randomQuoteDiv.innerHTML = `"${randomText}" - ${randomAuthor}`;
   });
 
-const innerNumbers = document.querySelectorAll('#number');
 
-innerNumbers.forEach((element) => {
-  let counter = 0;
-  let percentage = element.closest('.progress').dataset.percent;
-  setInterval(() => {
-    if (counter == percentage) {
-      clearInterval();
-    } else {
-      counter += 1;
-      element.innerHTML = counter + '%';
-    }
-  }, 20);
-
-});
